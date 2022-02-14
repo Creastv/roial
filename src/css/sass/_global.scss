@@ -1,0 +1,45 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  padding-top: 1px;
+}
+
+.container-fluid {
+  width: calc(100% - 30px);
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+#ornament-header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  width: 223.8px;
+}
+
+#go-to-top {
+  position: fixed;
+  z-index: 999;
+  right: 10px;
+  bottom: -110px;
+  background-color: $main;
+  border-radius: 3px;
+  padding: 10px;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: all 1s;
+  &:hover {
+    opacity: 0.8;
+  }
+  &:focus {
+    opacity: 0.3;
+  }
+}
+.go-to-to-active {
+  bottom: 10px !important;
+}

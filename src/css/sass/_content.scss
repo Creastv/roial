@@ -1,0 +1,26 @@
+main {
+  overflow: hidden;
+}
+article {
+  .entry-header {
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    position: relative;
+    text-align: center;
+    background-color: $light;
+    .entry-title {
+      margin: 0;
+      padding: 50px 15px;
+      font-size: 4rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $black;
+    }
+  }
+  .entry-content {
+    position: relative;
+    z-index: 3;
+  }
+}

@@ -1,0 +1,21 @@
+#info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px 0;
+  border-top: 1px solid $main-tir;
+  @media #{$sm} {
+    justify-content: center;
+  }
+  .col {
+    p {
+      font-size: 14px;
+      margin: 0;
+      color: $main-tir;
+      @media #{$sm} {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

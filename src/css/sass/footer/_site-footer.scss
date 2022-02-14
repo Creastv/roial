@@ -1,0 +1,15 @@
+#footer {
+  background-color: $main-sec;
+  padding-top: 50px;
+  .row {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @media #{$sm} {
+      flex-wrap: wrap;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.nav-brand {
+  padding: 10px 0;
+  @media #{$xs} {
+    width: 50%;
+  }
+  a {
+    max-width: 300px;
+    display: block;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
