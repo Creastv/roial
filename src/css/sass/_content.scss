@@ -3,19 +3,39 @@ main {
 }
 article {
   .entry-header {
-    width: 100vw;
-    margin-left: -50vw;
-    left: 50%;
-    position: relative;
-    text-align: center;
-    background-color: $light;
+    #breadcrumbs {
+      padding: 20px 0;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 400;
+      a {
+        color: #d5d5d5;
+        &:hover {
+          color: $main-tir;
+        }
+      }
+      span {
+        span {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .breadcrumb_last {
+        color: $main-tir;
+        font-weight: 700;
+      }
+      .sep-b {
+        width: 37px;
+        height: 0px;
+        border: 1px solid #d5d5d5;
+        margin: 0 18px;
+      }
+    }
     .entry-title {
       margin: 0;
-      padding: 50px 15px;
-      font-size: 4rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      padding: 20px;
+      font-size: 58px;
+      font-weight: 400;
       color: $black;
     }
   }

@@ -9,6 +9,7 @@
   transition: all 1s;
   @media #{$md} {
     display: block;
+    order: 3;
   }
   @media #{$sm} {
     padding: 10px;

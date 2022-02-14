@@ -1,5 +1,8 @@
 .nav-brand {
   padding: 10px 0;
+  @media #{$md} {
+    flex: auto;
+  }
   @media #{$xs} {
     width: 50%;
   }

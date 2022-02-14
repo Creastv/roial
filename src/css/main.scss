@@ -13,11 +13,13 @@
 
 // footer
 @import "./sass/footer/site-footer";
-@import "./sass/footer/site-footer-branding";
-@import "./sass/footer/site-footer-nav";
+@import "./sass/footer/site-google-map";
 @import "./sass/footer/site-footer-info";
 
 // Post/Page
 @import "./sass/content";
 @import "./sass/err";
 @import "./sass/buttons";
+
+// layout
+@import "./sass/form";

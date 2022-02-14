@@ -1,15 +1,56 @@
 #footer {
-  background-color: $main-sec;
-  padding-top: 50px;
+}
+#contact-footer {
+  width: 100vw;
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
   .row {
-    margin-bottom: 50px;
     display: flex;
-    justify-content: space-between;
     align-items: flex-end;
-    @media #{$sm} {
-      flex-wrap: wrap;
+    .col {
+      width: 50%;
+    }
+    .contact__info {
+      position: relative;
+    }
+    .contact___header {
       text-align: center;
-      justify-content: center;
+    }
+    .contact___detail {
+      //   position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background: url(../img/bg-gold-footer.jpg) no-repeat center;
+        background-size: cover;
+        width: calc(100% - 15%);
+        height: 100%;
+      }
+      .wraper {
+        position: relative;
+        z-index: 3;
+        left: 15%;
+        top: 0px;
+        bottom: -50px;
+        width: calc(100% - 15%);
+        transform: translate(0, 50px);
+        .wraper_content {
+          background-color: $main;
+          padding: 20px;
+          height: 390px;
+        }
+      }
+    }
+    .contact__form {
+      width: calc(50% - 15%);
+      margin-left: 7.5%;
+      .wraper {
+        padding: 30px;
+        // width: calc(100% - 15%);
+      }
     }
   }
 }

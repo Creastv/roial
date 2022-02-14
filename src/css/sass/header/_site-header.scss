@@ -1,16 +1,14 @@
 #header {
   background-color: #fff;
-  border-bottom: 10px solid darken($light, 5%);
   position: relative;
   z-index: 999;
   transition: all 1s;
   padding-top: 5px;
   .header-nav-wraper {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    @media #{$md} {
-      flex-wrap: wrap;
-    }
+    flex-wrap: wrap;
   }
 }
 .header-active {

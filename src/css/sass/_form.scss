@@ -1,0 +1,32 @@
+.form-group {
+  position: relative;
+  margin-bottom: 15px;
+  label {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 18px;
+  }
+  br {
+    display: none;
+  }
+}
+.form-control {
+  border: none;
+  border-bottom: 1px solid $black;
+  font-size: 18px;
+  height: 60px;
+  width: 100%;
+}
+
+.wpcf7-form-control-wrap {
+  position: initial;
+  width: 100%;
+  .wpcf7-acceptance {
+    label {
+      position: relative;
+      font-size: 14px;
+    }
+  }
+}

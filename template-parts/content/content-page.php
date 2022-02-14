@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php if ( ! is_front_page() ) : ?>
     <header class="entry-header">
-        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        <?php get_template_part('template-parts/header/site-title'); ?>
     </header>
     <?php endif; ?>
     <div class="entry-content">

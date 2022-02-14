@@ -8,12 +8,12 @@ if ( ! function_exists( 'inb_register_nav_menu' ) ) {
     }
     add_action( 'after_setup_theme', 'inb_register_nav_menu', 0 );
 }
-function cr_scripts() {
-	wp_enqueue_style( 'cr-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'cr_custome-style', get_template_directory_uri().'/src/css/main.min.css' ); ;
-	wp_enqueue_script('cr-main', get_template_directory_uri().'/src/js/main.js', array( 'jquery' ),'3', true );
+function ra_scripts() {
+	wp_enqueue_style( 'ra-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'ra-custome-style', get_template_directory_uri().'/src/css/main.min.css' ); ;
+	wp_enqueue_script('ra-main', get_template_directory_uri().'/src/js/main.js', array( 'jquery' ),'3', true );
 }
-add_action( 'wp_enqueue_scripts', 'cr_scripts' );
+add_action( 'wp_enqueue_scripts', 'ra_scripts' );
 
 require get_template_directory() . '/src/inc/customizer.php';
 
@@ -41,3 +41,40 @@ function ao_defer_inline_jquery( $in ) {
   }
   return $in;
 }
+
+
+
+
+// Allow SVG
+add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
+
+  global $wp_version;
+  if ( $wp_version !== '4.7.1' ) {
+     return $data;
+  }
+
+  $filetype = wp_check_filetype( $filename, $mimes );
+
+  return [
+      'ext'             => $filetype['ext'],
+      'type'            => $filetype['type'],
+      'proper_filename' => $data['proper_filename']
+  ];
+
+}, 10, 4 );
+
+function cc_mime_types( $mimes ){
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
+
+function fix_svg() {
+  echo '<style type="text/css">
+        .attachment-266x266, .thumbnail img {
+             width: 100% !important;
+             height: auto !important;
+        }
+        </style>';
+}
+add_action( 'admin_head', 'fix_svg' );
