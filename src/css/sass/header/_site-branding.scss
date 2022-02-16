@@ -3,9 +3,6 @@
   @media #{$md} {
     flex: auto;
   }
-  @media #{$xs} {
-    width: 50%;
-  }
   a {
     max-width: 300px;
     display: block;

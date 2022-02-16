@@ -1,33 +1,73 @@
 .toggler-nav {
-  width: 32px;
+  position: relative;
+  width: 36px;
   height: 15px;
-  padding: 15px;
-  border: 1px solid $main;
-  align-self: center;
   display: none;
+  text-align: right;
   cursor: pointer;
   transition: all 1s;
+
   @media #{$md} {
     display: block;
     order: 3;
   }
-  @media #{$sm} {
-    padding: 10px;
+  &:hover {
+    span {
+      width: 100% !important;
+      background-color: #707070;
+      color: #707070 !important;
+    }
   }
   span {
+    position: absolute;
+    right: 0;
     display: block;
     background-color: $main;
     border-radius: 1px;
     width: 100%;
-    height: 3px;
-    margin-bottom: 3px;
+    height: 2px;
+    margin-bottom: 5px;
+    @include trans;
+
+    &:nth-child(1) {
+      width: 60%;
+    }
+    &:nth-child(2) {
+      width: 100%;
+      transform: translate(0, 6px);
+    }
+    &:nth-child(3) {
+      width: 80%;
+      transform: translate(0, 12px);
+    }
+    &:nth-child(4) {
+      transform: translate(0, 15px);
+      font-size: 9px;
+      background: none !important;
+      color: #e4c491;
+    }
   }
 }
 // js
 
 .toggler-nav-active {
-  background-color: $main;
   span {
-    background-color: #fff;
+    background-color: $main;
+    &:nth-child(1) {
+      width: 100%;
+      transform: translate(0, 6px);
+    }
+    &:nth-child(2) {
+      width: 100%;
+      transform: translate(0, 6px);
+    }
+    &:nth-child(3) {
+      width: 100%;
+      transform: translate(0, 6px);
+    }
+    &:nth-child(4) {
+      width: 100%;
+      transform: translate(0, 11px);
+    }
   }
 }

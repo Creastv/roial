@@ -17,3 +17,65 @@
     background-color: darken($main, 1%);
   }
 }
+
+// btn nav
+
+.btn-nav {
+  a {
+    background-color: $main-tir;
+    color: #fff !important;
+    padding: 15px 20px !important;
+    &:after {
+      display: none !important;
+    }
+    span {
+      color: #fff !important;
+    }
+  }
+}
+
+.btn-nav {
+  a {
+    overflow: hidden;
+    transition: all 0.3s ease;
+    @media #{$md} {
+      font-size: 16px !important;
+    }
+  }
+  a:hover {
+    background: #000;
+    color: #fff;
+  }
+  a:before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 5s ease-in-out infinite;
+  }
+  a:active {
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3), -4px -4px 6px 0 rgba(116, 125, 136, 0.2), inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2), inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+@-webkit-keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}

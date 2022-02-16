@@ -1,0 +1,92 @@
+.contact-component {
+  padding: 30px 50px;
+  @media #{$xlg} {
+    padding: 0;
+  }
+  @media #{$lg} {
+    padding: 0;
+  }
+  @media #{$md} {
+    padding: 30px 50px;
+  }
+  @media #{$sm} {
+    padding: 0px;
+  }
+  .row {
+    align-items: flex-start;
+    @media #{$md} {
+      flex-wrap: wrap;
+    }
+    .col {
+      width: 50%;
+      @media #{$md} {
+        width: 50% !important;
+      }
+      @media #{$xs} {
+        width: 100% !important;
+      }
+    }
+  }
+  .contact {
+    padding: 15px;
+    h4 {
+      position: relative;
+      font-size: 25px;
+      color: #fff;
+      padding-bottom: 10px;
+      margin: 0px 0 15px;
+      display: block;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 158px;
+        height: 1px;
+        background-color: #fff;
+      }
+    }
+    p,
+    a,
+    span {
+      font-size: 20px;
+      color: $black;
+      display: block;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    a {
+      margin-bottom: 5px;
+      @include trans;
+      &:hover {
+        color: $main-tir;
+      }
+    }
+    span {
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.social-media {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  li {
+    a {
+      margin: 0 15px;
+      &:hover {
+        .hover {
+          fill: $main-tir;
+        }
+      }
+      .hover {
+        @include trans;
+      }
+    }
+  }
+}

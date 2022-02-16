@@ -1,5 +1,5 @@
 <div class="map map-full">
-    <div class="map">
+    <div id="map">
 
     </div>
 </div>

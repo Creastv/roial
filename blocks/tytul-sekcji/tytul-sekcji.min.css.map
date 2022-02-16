@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AACE,iBADe,CACf,kBAAkB,AAAC,CACjB,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CAKX,AATH,AAKI,iBALa,CACf,kBAAkB,CAIhB,IAAI,AAAC,CACH,KAAK,CCFJ,OAAO,CDGR,WAAW,CAAE,GAAG,CACjB,AAIL,AAAA,iBAAiB,AAAA,YAAY,AAAC,CAC5B,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACxB,AAED,AAAA,iBAAiB,AAAA,WAAW,AAAC,CAC3B,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,QAAQ,CAC1B",
+    "sources": [
+        "tytul-sekcji.scss",
+        "../../src/css/sass/_variable.scss",
+        "../../src/css/sass/_mixins.scss"
+    ],
+    "names": [],
+    "file": "tytul-sekcji.min.css"
+}

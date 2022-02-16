@@ -10,6 +10,7 @@ article {
       font-weight: 400;
       a {
         color: #d5d5d5;
+        @include trans;
         &:hover {
           color: $main-tir;
         }

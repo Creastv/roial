@@ -1,0 +1,123 @@
+@import "../../src/css/sass/variable";
+@import "../../src/css/sass/mixins";
+
+.ra-hero {
+  width: 100vw;
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+  padding: 150px 0;
+  @media #{$md} {
+    padding: 0;
+  }
+}
+#ra-hero-carusel {
+  position: relative;
+  .text {
+    width: 60%;
+    @media #{$md} {
+      width: 100%;
+    }
+    .copy {
+      margin-left: 75px;
+      position: relative;
+      @media #{$xs} {
+        margin-left: 0px;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: -75px;
+        width: 0;
+        height: 0;
+        border-top: 27px solid transparent;
+        border-left: 38px solid $main;
+        border-bottom: 27px solid transparent;
+      }
+      h1,
+      h2 {
+        font-size: 3.5vw;
+        line-height: 3.5vw;
+        font-weight: 400;
+        margin: 0;
+        padding: 0;
+        @media #{$xlg} {
+          font-size: 44px;
+          line-height: 46px;
+        }
+        @media #{$md} {
+          font-size: 31px;
+          line-height: 33px;
+        }
+        @media #{$xs} {
+          font-size: 28px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+  .nav-slider {
+    // position: absolute;
+    // top: 150px;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    .swiper-pagination {
+      position: inherit;
+      bottom: inherit;
+      width: inherit;
+      text-align: left;
+      margin-left: 75px;
+      display: flex;
+      align-items: center;
+      @media #{$xs} {
+        margin-left: 0px;
+      }
+      * {
+        font-size: 20px;
+      }
+      .swiper-pagination-total {
+        color: $main;
+      }
+      .sep-b {
+        width: 100px;
+        height: 1px;
+        border: 1px solid #d5d5d5;
+        margin: 0 18px;
+        display: block;
+      }
+    }
+  }
+}
+.triangles {
+  position: absolute;
+  z-index: -1;
+  top: 80px;
+  right: 0px;
+  width: 51%;
+  @media #{$xs} {
+    top: 0px;
+  }
+  svg {
+    width: 100%;
+  }
+}
+
+.acf-block-preview {
+  .ra-hero {
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+    position: relative;
+    padding: 0px 0;
+    h1,
+    h2 {
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: 400;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

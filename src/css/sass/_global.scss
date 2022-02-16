@@ -1,12 +1,19 @@
 html {
   scroll-behavior: smooth;
 }
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
   padding-top: 1px;
   font-family: "Mulish", sans-serif;
   font-weight: 400;
+  position: relative;
+  z-index: -1;
 }
 
 .container-fluid {
@@ -14,25 +21,30 @@ body {
   max-width: 1700px;
   margin: 0 auto;
 }
-
-#go-to-top {
-  position: fixed;
-  z-index: 999;
-  right: 10px;
-  bottom: -110px;
-  background-color: $main;
-  border-radius: 3px;
-  padding: 10px;
-  opacity: 0.4;
-  cursor: pointer;
-  transition: all 1s;
-  &:hover {
-    opacity: 0.8;
-  }
-  &:focus {
-    opacity: 0.3;
+.container {
+  width: calc(100% - 15%);
+  max-width: 1050px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  align-items: flex-end;
+  .col {
+    width: 50%;
   }
 }
-.go-to-to-active {
-  bottom: 10px !important;
+
+.orn-right {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0px;
+  width: 30%;
+  max-width: 450px;
+  height: 100%;
+  overflow: hidden;
+  svg {
+    position: absolute;
+    bottom: 0;
+  }
 }

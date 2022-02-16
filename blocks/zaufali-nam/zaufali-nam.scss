@@ -1,0 +1,59 @@
+@import "../../src/css/sass/variable";
+@import "../../src/css/sass/mixins";
+
+.ra-zaufalinam {
+  width: 100vw;
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    li {
+      width: 25%;
+      text-align: center;
+      padding: 10px;
+      align-self: stretch;
+      .logo {
+        border: 1px solid $black;
+        background-color: #fff;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 170px;
+      }
+      img {
+        padding: 10px;
+        width: 100%;
+        max-width: 170px;
+        height: auto;
+        filter: brightness(0%);
+      }
+    }
+  }
+}
+.bg-zaufali-nam {
+  position: absolute;
+  left: -20%;
+  z-index: -1;
+  top: -40%;
+  height: 180%;
+  svg {
+    width: 100%;
+  }
+}
+
+.acf-block-preview {
+  .ra-zaufalinam {
+    width: 100%;
+    margin-left: 0;
+    left: 0;
+    position: relative;
+    padding: 0px 0;
+  }
+}

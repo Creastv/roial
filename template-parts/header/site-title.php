@@ -1,6 +1,7 @@
 <?php if ( function_exists('yoast_breadcrumb') ) { ?>
 <?php  yoast_breadcrumb( '<div id="breadcrumbs">','</div>' ); ?>
 <?php } ?>
+<?php if(!is_page_template('template-parts/no-title.php')) { ?>
 <h1 class="entry-title">
     <?php if ( is_category() ) :
         single_cat_title();	
@@ -46,3 +47,4 @@
 			_e( 'Blog', 'cr' );
 		endif; ?>
 </h1>
+<?php } ?>

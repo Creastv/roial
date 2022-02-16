@@ -1,11 +1,12 @@
 (window.onload = function (event) {
   const body = document.querySelector("body");
   const header = document.querySelector("#header");
+  const main = document.querySelector("main");
+  const footer = document.querySelector("#footer");
   const sticky = header.offsetTop;
   const togglerNav = document.querySelector(".toggler-nav");
   const headerNav = document.querySelector(".header-nav");
   const li = [...document.querySelectorAll("#header-nav-list li")];
-
   let navFlag = false;
   const goToTop = document.querySelector("#go-to-top");
 
@@ -47,6 +48,7 @@
       navFlag = false;
     }
   });
+  // Nav list
   function addClassToNavList() {
     let index = 0;
     setTimeout(function () {
@@ -61,4 +63,69 @@
       }, 100);
     }, 0);
   }
+
+  // formGroup; labels hover
+  const labels = [...document.querySelectorAll(".fg-js")];
+
+  for (let i = 0; i < labels.length; i++) {
+    const label = function () {
+      if (labels[i].children[2].childNodes[0] === document.activeElement || labels[i].children[2].childNodes[0].value) {
+        labels[i].childNodes[1].classList.add("active");
+        labels[i].children[2].childNodes[0].classList.add("active");
+      } else {
+        labels[i].childNodes[1].classList.remove("active");
+        labels[i].children[2].childNodes[0].classList.remove("active");
+      }
+    };
+    labels[i].children[2].childNodes[0].addEventListener("focusin", label);
+    labels[i].children[2].childNodes[0].addEventListener("focusout", label);
+  }
+
+  // Stickier contact
+  const stickier = document.querySelector("#contact-label");
+  const modal = document.querySelector("#contact-modal");
+  const modalClose = document.querySelector(".close-m");
+
+  setTimeout(function () {
+    stickier.classList.add("active");
+  }, 2000);
+  // Modal
+  stickier.addEventListener("click", function () {
+    modal.classList.add("active");
+    body.style.overflow = "hidden";
+    header.classList.add("m-active");
+    main.classList.add("m-active");
+    footer.classList.add("m-active");
+  });
+
+  modalClose.addEventListener("click", function () {
+    modal.classList.remove("active");
+    body.style.overflow = "inicial";
+    header.classList.remove("m-active");
+    main.classList.remove("m-active");
+    footer.classList.remove("m-active");
+  });
+
+  const triangles = document.querySelector(".orn-right svg");
+
+  document.addEventListener("scroll", () => {
+    let scrollTop = document.documentElement.scrollTop;
+    if (isInViewport(h1)) {
+      if (triangles !== null) {
+        // triangles.style.width = 100 + scrollTop / 11 + "%";
+        triangles.style.transform = ` translate(0, ${0 + scrollTop / 2}px)`;
+      }
+    }
+  });
+  var h1 = document.querySelector("footer");
+
+  var isInViewport = function (elem) {
+    var distance = elem.getBoundingClientRect();
+    return (
+      distance.top >= 0 &&
+      distance.left >= 0 &&
+      distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
 })();

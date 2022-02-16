@@ -1,0 +1,26 @@
+@import "../../src/css/sass/variable";
+@import "../../src/css/sass/mixins";
+
+.ra-title-section {
+  .title-section-tag {
+    font-size: 58px;
+    margin: 0;
+    padding: 0;
+    span {
+      color: $main;
+      font-weight: 900;
+    }
+  }
+}
+
+.ra-title-section.aligncenter {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.ra-title-section.alignright {
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+}

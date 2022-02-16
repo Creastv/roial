@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "case-study.scss",
+        "../../src/css/sass/_variable.scss",
+        "../../src/css/sass/_mixins.scss"
+    ],
+    "names": [],
+    "file": "case-study.css"
+}

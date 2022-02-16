@@ -2,12 +2,22 @@
   position: relative;
   margin-bottom: 15px;
   label {
+    pointer-events: none;
     position: absolute;
     z-index: 2;
     top: 50%;
+    left: 0px;
     transform: translate(0, -50%);
-    font-size: 18px;
+    font-size: 16px;
+    background-color: #fff;
+    @include trans;
   }
+  label.active {
+    font-size: 14px !important;
+    top: 0;
+    transform: translate(0, -10px);
+  }
+
   br {
     display: none;
   }
@@ -18,15 +28,97 @@
   font-size: 18px;
   height: 60px;
   width: 100%;
+  outline: none;
+  background: none;
+}
+.form-control.active {
+  border-bottom: 2px solid $main;
+}
+.form-control.wpcf7-not-valid {
+  border-bottom: 2px solid red !important;
 }
 
+.wpcf7-not-valid-tip {
+  color: #dc3232;
+  font-size: 11px;
+}
 .wpcf7-form-control-wrap {
   position: initial;
   width: 100%;
   .wpcf7-acceptance {
+    .wpcf7-list-item {
+      margin: 0 0 40px 0;
+    }
     label {
       position: relative;
       font-size: 14px;
+      pointer-events: initial;
     }
   }
+}
+
+.fg-js-upload input {
+  font-size: 0px;
+  height: 20px;
+  border: 0;
+}
+
+.fg-js-upload label {
+  top: 0;
+  height: 30px;
+  transform: translate(0px, 0px);
+  left: 0;
+  padding-left: 20px;
+}
+
+.fg-js-btn {
+  position: relative;
+  display: inline-block;
+  &:after {
+    content: url("../img/long-arrow.svg");
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+    @include trans;
+  }
+  &:hover {
+    &:after {
+      content: url("../img/long-arrow-white.svg");
+    }
+    .wpcf7-submit {
+      &:hover {
+        color: #fff;
+        background-color: $black;
+        border: 1px solid #464646;
+      }
+    }
+  }
+}
+.wpcf7-spinner {
+  position: absolute;
+}
+.wpcf7-submit {
+  background-color: #efd6ae;
+  border: 0;
+  border: 1px solid #e9d4b2;
+  box-shadow: none;
+  color: $black;
+  padding: 10px 75px 10px 35px;
+  font-size: 20px;
+  font-weight: 700;
+  @include trans;
+  &:hover {
+    color: #fff;
+    background-color: $black;
+    border: 1px solid #464646;
+  }
+}
+
+.wpcf7-response-output {
+  border-radius: 3px;
+  padding: 15px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 40px 5px rgba(51, 51, 51, 0.01);
+  box-shadow: 0 0 40px 5px rgba(51, 51, 51, 0.01);
 }
