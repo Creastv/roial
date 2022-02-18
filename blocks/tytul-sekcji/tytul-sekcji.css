@@ -4,6 +4,12 @@
   padding: 0;
 }
 
+@media only screen and (max-width: 460px) {
+  .ra-title-section .title-section-tag {
+    font-size: 31px;
+  }
+}
+
 .ra-title-section .title-section-tag span {
   color: #efd6ae;
   font-weight: 900;

@@ -8,12 +8,17 @@
 
 @media only screen and (max-width: 998px) {
   .ra-hero {
-    padding: 0;
+    padding: 100px 0;
   }
+}
+
+#ra-hero-carusel.loaded {
+  display: block !important;
 }
 
 #ra-hero-carusel {
   position: relative;
+  display: none;
 }
 
 #ra-hero-carusel .text {
@@ -69,16 +74,24 @@
 @media only screen and (max-width: 998px) {
   #ra-hero-carusel .text .copy h1,
   #ra-hero-carusel .text .copy h2 {
-    font-size: 31px;
-    line-height: 33px;
+    font-size: 51px;
+    line-height: 55px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #ra-hero-carusel .text .copy h1,
+  #ra-hero-carusel .text .copy h2 {
+    font-size: 41px;
+    line-height: 44px;
   }
 }
 
 @media only screen and (max-width: 460px) {
   #ra-hero-carusel .text .copy h1,
   #ra-hero-carusel .text .copy h2 {
-    font-size: 28px;
-    line-height: 30px;
+    font-size: 31px;
+    line-height: 36px;
   }
 }
 
@@ -134,9 +147,10 @@
   width: 51%;
 }
 
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 768px) {
   .triangles {
     top: 0px;
+    width: 80%;
   }
 }
 

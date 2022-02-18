@@ -34,10 +34,14 @@ article {
     }
     .entry-title {
       margin: 0;
-      padding: 20px;
+      padding: 20px 0;
       font-size: 58px;
       font-weight: 400;
       color: $black;
+      span {
+        font-weight: 700;
+        color: $main !important;
+      }
     }
   }
   .entry-content {

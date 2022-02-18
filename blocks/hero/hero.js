@@ -1,4 +1,6 @@
 (window.onload = function (event) {
+  document.querySelector("#ra-hero-carusel").classList.add("loaded");
+
   const triangles = document.querySelector(".triangles svg");
   document.addEventListener("scroll", () => {
     let scrollTop = document.documentElement.scrollTop;
@@ -12,8 +14,11 @@
   var swiper = new Swiper("#ra-hero-carusel", {
     grabCursor: true,
     effect: "creative",
+    preloadImages: false,
+    loop: true,
+    lazy: true,
     autoplay: {
-      delay: 2300,
+      delay: 2900,
       disableOnInteraction: false
     },
     creativeEffect: {

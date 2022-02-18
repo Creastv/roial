@@ -16,10 +16,17 @@
 @import "./sass/footer/site-footer-info";
 @import "./sass/footer/site-contact";
 
+// extras
+@import "./sass/extras/stickier-contact";
+@import "./sass/extras/random-cases-stady-carousel";
+
 // Post/Page
-@import "./sass/content";
+@import "./sass/content/content";
+@import "./sass/content/content-single";
+@import "./sass/content/content-case-study";
 @import "./sass/err";
 @import "./sass/buttons";
+@import "./sass/blog";
 
 // layout
 @import "./sass/form";

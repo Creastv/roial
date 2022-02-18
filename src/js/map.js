@@ -1,5 +1,4 @@
 let map;
-
 function initMap() {
   const mapOptions = {
     zoom: 15,

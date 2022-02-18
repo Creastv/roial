@@ -1,25 +1,69 @@
+.wrap-btn {
+  padding: 20px 0px;
+  text-align: center;
+}
+
 .btn {
-  border: 1px solid $main;
-  border-radius: 3px;
   display: inline-block;
   padding: 10px;
   font-size: 16px;
-  transition: all 1s;
+  @include trans;
+  color: $black;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .btn-main {
   background-color: $main;
-  color: #fff;
+
   &:hover {
-    background-color: darken($main, 10%);
+    background-color: $black;
+    color: #fff;
   }
   &:focus {
-    background-color: darken($main, 1%);
+    background-color: $black;
+    color: #fff;
+    opacity: 0.6;
   }
 }
 
-// btn nav
+.btn-big {
+  font-size: 20px;
+  padding: 15px 25px;
+}
+.btn-main-arrow {
+  position: relative;
+  // padding: 15px 75px 15px 25px;
+  padding-right: 85px;
+  &:after {
+    content: "";
+    background: url(../img/long-arrow.svg);
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    height: 22px;
+    width: 33px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+    @include trans;
+  }
+  &:hover {
+    &:after {
+      transform: translate(10px, -50%);
+    }
+  }
+}
 
+.btn-main.btn-main-arrow {
+  &:hover,
+  &:focus {
+    &:after {
+      background: url(../img/long-arrow-white.svg);
+    }
+  }
+}
+// btn nav
 .btn-nav {
   a {
     background-color: $main-tir;

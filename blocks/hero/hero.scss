@@ -8,11 +8,15 @@
   position: relative;
   padding: 150px 0;
   @media #{$md} {
-    padding: 0;
+    padding: 100px 0;
   }
+}
+#ra-hero-carusel.loaded {
+  display: block !important;
 }
 #ra-hero-carusel {
   position: relative;
+  display: none;
   .text {
     width: 60%;
     @media #{$md} {
@@ -47,12 +51,17 @@
           line-height: 46px;
         }
         @media #{$md} {
-          font-size: 31px;
-          line-height: 33px;
+          font-size: 51px;
+          line-height: 55px;
         }
+        @media #{$sm} {
+          font-size: 41px;
+          line-height: 44px;
+        }
+
         @media #{$xs} {
-          font-size: 28px;
-          line-height: 30px;
+          font-size: 31px;
+          line-height: 36px;
         }
       }
     }
@@ -96,8 +105,9 @@
   top: 80px;
   right: 0px;
   width: 51%;
-  @media #{$xs} {
+  @media #{$sm} {
     top: 0px;
+    width: 80%;
   }
   svg {
     width: 100%;

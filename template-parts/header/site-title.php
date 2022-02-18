@@ -3,15 +3,19 @@
 <?php } ?>
 <?php if(!is_page_template('template-parts/no-title.php')) { ?>
 <h1 class="entry-title">
-    <?php if ( is_category() ) :
-        single_cat_title();	
-        					
+
+    <?php
+	$t = get_field("tytul",  $post->ID);
+	$t2 = get_field("tytul_2",  $post->ID);
+
+	    if ( $t || $t2 ) :
+        echo $t . ' <span>'.$t2. '</span>';
+        elseif (is_category()) :
+           single_cat_title();		
 		elseif (is_single()) :
 			the_title();
-
 		elseif (is_page() ) :
 			the_title();
-
 		elseif ( is_tag() ) :
 			single_tag_title();
 

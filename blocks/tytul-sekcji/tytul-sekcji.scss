@@ -6,6 +6,9 @@
     font-size: 58px;
     margin: 0;
     padding: 0;
+    @media #{$xs} {
+      font-size: 31px;
+    }
     span {
       color: $main;
       font-weight: 900;

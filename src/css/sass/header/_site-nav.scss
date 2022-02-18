@@ -52,8 +52,8 @@
           font-size: 25px !important;
         }
         @media #{$lg} {
-          font-size: 14px;
-          padding: 5px 10px;
+          font-size: 18px !important;
+          padding: 15px 10px;
         }
         &::after {
           content: "";

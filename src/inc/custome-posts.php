@@ -21,7 +21,7 @@ function ra_casestudy_post_types() {
 	);
 	$args = array( 
 	    'public' => true,
-		'has_archive' => false,
+		'has_archive' => true,
 		'show_in_rest' => true,
 		'hierarchical'      => true,
 		'menu_icon'     => 'dashicons-businessman',

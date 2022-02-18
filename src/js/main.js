@@ -51,8 +51,8 @@
   // Nav list
   function addClassToNavList() {
     let index = 0;
-    setTimeout(function () {
-      window.setInterval(function () {
+    setTimeout(() => {
+      window.setInterval(() => {
         if (index < li.length) {
           if (navFlag) {
             li[index++].classList.add("liVisible");
@@ -86,27 +86,39 @@
   const modal = document.querySelector("#contact-modal");
   const modalClose = document.querySelector(".close-m");
 
-  setTimeout(function () {
+  setTimeout(() => {
     stickier.classList.add("active");
   }, 2000);
+
   // Modal
-  stickier.addEventListener("click", function () {
-    modal.classList.add("active");
-    body.style.overflow = "hidden";
-    header.classList.add("m-active");
-    main.classList.add("m-active");
-    footer.classList.add("m-active");
+  stickier.addEventListener("click", openModal);
+
+  modalClose.addEventListener("click", function (event) {
+    if (!event.target.matches(".close-m") || !event.target.matches(".box")) {
+      closeModal();
+    }
+    false;
   });
 
-  modalClose.addEventListener("click", function () {
+  function closeModal() {
     modal.classList.remove("active");
-    body.style.overflow = "inicial";
+    body.classList.remove("modal-active");
     header.classList.remove("m-active");
     main.classList.remove("m-active");
     footer.classList.remove("m-active");
-  });
+  }
 
+  function openModal() {
+    modal.classList.add("active");
+    body.classList.add("modal-active");
+    header.classList.add("m-active");
+    main.classList.add("m-active");
+    footer.classList.add("m-active");
+  }
+
+  // viewport for sf
   const triangles = document.querySelector(".orn-right svg");
+  var h1 = document.querySelector("footer");
 
   document.addEventListener("scroll", () => {
     let scrollTop = document.documentElement.scrollTop;
@@ -117,9 +129,8 @@
       }
     }
   });
-  var h1 = document.querySelector("footer");
 
-  var isInViewport = function (elem) {
+  var isInViewport = (elem) => {
     var distance = elem.getBoundingClientRect();
     return (
       distance.top >= 0 &&

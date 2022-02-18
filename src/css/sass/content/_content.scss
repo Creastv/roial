@@ -1,0 +1,20 @@
+.post-cart {
+  .row {
+    align-items: center;
+    .col {
+    }
+  }
+  .img {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .entry-content {
+    padding: 30px 50px 30px 100px;
+    h2 {
+      font-size: 40px;
+      margin-bottom: 50px;
+    }
+  }
+}

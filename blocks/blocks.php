@@ -86,6 +86,24 @@ function register_acf_block_types() {
           wp_enqueue_style( 'ra-case-study',  get_template_directory_uri() . '/blocks/case-study/case-study.css' );
       },
     ));
+
+    acf_register_block_type(array(
+        'name'              => 'case-study-loader',
+        'title'             => __('Case Study - load more'),
+        'render_template'   => 'blocks/case-study/all-case-study.php',
+        'category'          => 'formatting',
+        'icon' => array(
+          'background' => '#efd6ae',
+          'foreground' => '#fff',
+          'src' => 'ellipsis',
+        ),
+      'mode'            => 'preview', 
+      'keywords'          => array( 'Case study' ),
+      'enqueue_assets'    => function(){
+          wp_enqueue_style( 'ra-case-study',  get_template_directory_uri() . '/blocks/case-study/case-study.css' );
+      },
+    ));
+
     acf_register_block_type(array(
         'name'              => 'nasza-oferta',
         'title'             => __('Nasz oferta'),

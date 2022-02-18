@@ -1,4 +1,5 @@
 <?php
+add_theme_support('post-thumbnails');
 if ( ! function_exists( 'inb_register_nav_menu' ) ) {
     function inb_register_nav_menu(){
         register_nav_menus( array(
@@ -13,6 +14,11 @@ function ra_scripts() {
 	wp_enqueue_style( 'ra-custome-style', get_template_directory_uri().'/src/css/main.min.css' ); ;
 	wp_enqueue_script('ra-main', get_template_directory_uri().'/src/js/main.js', array( 'jquery' ),'3', true );
   wp_enqueue_script('ra-map', get_template_directory_uri().'/src/js/map.js', array( 'jquery' ),'4', true );
+  if(is_singular( 'case-study' )){
+      wp_enqueue_style( 'ra_svipeer_css', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
+      wp_enqueue_script('ra-swiper_js', 'https://unpkg.com/swiper/swiper-bundle.min.js',  array(), '20130456', true );
+      wp_enqueue_script( 'ra-random-cases-stady', get_template_directory_uri() . '/src/js/random-cases-stady-carousel.js', array(), '20130457', true );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'ra_scripts' );
 
@@ -75,3 +81,36 @@ function fix_svg() {
         </style>';
 }
 add_action( 'admin_head', 'fix_svg' );
+
+
+// // Load more
+wp_localize_script( 'core-js', 'ajax_posts', array(
+	'ajaxurl' => admin_url( 'admin-ajax.php' ),
+));	
+add_action( 'te', 're_acf_repeater', 10); // hook is the first part
+
+function more_post_ajax(){
+    $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 3;
+	$page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
+    $idd =  (isset($_POST["idd"])) ? $_POST["idd"] : 0;
+
+    header("Content-Type: text/html");
+    $args = array(
+    'post_type' => 'case-study',
+    'posts_per_page' => $ppp,
+		'paged'    => $page,
+		'order' => 'ASC',
+		
+	);
+    $loop = new WP_Query($args);
+    $out = '';
+    if ($loop -> have_posts()) :  while ($loop -> have_posts()) : $loop -> the_post();
+		$out .=  include( 'template-parts/content/content-case-study.php');
+
+    endwhile; endif;
+    wp_reset_postdata();
+    die($out);
+}
+
+add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
+add_action('wp_ajax_more_post_ajax', 'more_post_ajax');

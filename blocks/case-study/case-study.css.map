@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAGA,AAAA,cAAc,CAAC;EACb,OAAO,EAAE,MAAM;CAWhB;;AAZD,AAEE,cAFY,CAEZ,qBAAqB,CAAC;EACpB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;CAOhB;;AAXH,AAKI,cALU,CAEZ,qBAAqB,CAGnB,QAAQ,CAAC;EACP,KAAK,EAAE,GAAG;CAIX;;AAHC,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK;EAP9C,AAKI,cALU,CAEZ,qBAAqB,CAGnB,QAAQ,CAAC;IAGL,KAAK,EAAE,IAAI;GAEd",
     "sources": [
         "case-study.scss",
         "../../src/css/sass/_variable.scss",

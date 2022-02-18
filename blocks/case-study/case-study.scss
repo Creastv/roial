@@ -2,4 +2,15 @@
 @import "../../src/css/sass/mixins";
 
 .ra-case-study {
+  padding: 50px 0;
+  .ra-case-study-wraper {
+    display: flex;
+    flex-wrap: wrap;
+    .cs-cart {
+      width: 50%;
+      @media #{$sm} {
+        width: 100%;
+      }
+    }
+  }
 }
