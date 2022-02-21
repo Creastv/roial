@@ -1,7 +1,7 @@
 <?php if ( function_exists('yoast_breadcrumb') ) { ?>
 <?php  yoast_breadcrumb( '<div id="breadcrumbs">','</div>' ); ?>
 <?php } ?>
-<?php if(!is_page_template('template-parts/no-title.php')) { ?>
+<?php if(!is_page_template('template-parts/no-title.php')  && !is_singular("post")) { ?>
 <h1 class="entry-title">
 
     <?php

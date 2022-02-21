@@ -4,10 +4,12 @@
     padding: 10px 0;
   }
   .cs-cart_wraper {
+    overflow: hidden;
     position: relative;
     align-items: center;
     background-color: #ececec;
     padding: 25px 10px;
+    @include trans;
     @media #{$sm} {
       padding: 10px;
       flex-wrap: wrap;
@@ -101,15 +103,19 @@
       left: inherit;
       right: 0;
     }
-    &:before {
+    &:before,
+    &:after {
       content: "";
       position: absolute;
-      left: 15%;
       top: 0;
       width: 30%;
       height: 35%;
-      background-image: url(..//img/bg-gold-footer.jpg);
       clip-path: polygon(0 0, 0% 100%, 100% 49%);
+      @include trans;
+    }
+    &:before {
+      left: 15%;
+      background-image: url(..//img/bg-gold-footer.jpg);
       @media #{$sm} {
         width: 60px;
         height: 80px;
@@ -119,14 +125,8 @@
       }
     }
     &:after {
-      content: "";
-      position: absolute;
       left: 0;
-      top: 0;
-      width: 30%;
-      height: 35%;
       background-color: $main;
-      clip-path: polygon(0 0, 0% 100%, 100% 49%);
       @media #{$sm} {
         width: 60px;
         height: 80px;
@@ -150,5 +150,18 @@
   img {
     width: 100px;
     height: auto;
+  }
+}
+
+.cs-cart:hover > .cs-cart_wraper {
+  transform: translateY(-10px);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  .bg {
+    &:after {
+      left: -5%;
+    }
+    &:before {
+      left: 0%;
+    }
   }
 }

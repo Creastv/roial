@@ -4,3 +4,86 @@
   left: 50%;
   position: relative;
 }
+
+.entry-header.blog {
+  text-align: center;
+}
+
+.futured-cat {
+  padding: 50px 0 100px;
+  @media #{$sm} {
+    padding: 30px 0;
+  }
+  span {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: $black;
+    display: block;
+    text-align: center;
+    @media #{$sm} {
+      font-size: 15px;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    li {
+      // width: 25%;
+      a {
+        display: block;
+        width: 100%;
+        font-size: 31px;
+        padding: 10px 25px;
+        border: 1px solid #d2d2d2;
+        color: $black;
+        @include trans;
+        @media #{$md} {
+          font-size: 21px;
+        }
+        @media #{$sm} {
+          font-size: 18px;
+        }
+        @media #{$xs} {
+          font-size: 14px;
+          padding: 5px;
+        }
+        &:hover {
+          background: $black;
+          color: #fff;
+        }
+      }
+    }
+    .active {
+      pointer-events: none;
+      cursor: none;
+      a {
+        color: $main;
+      }
+    }
+  }
+}
+
+.pagination {
+  text-align: center;
+  padding: 50px 0px;
+  a,
+  span {
+    padding: 10px;
+    border: 1px solid #d2d2d2;
+    color: $black;
+    &:hover {
+      background-color: $black;
+      color: #fff;
+    }
+  }
+  .current {
+    background-color: $main-tir;
+    color: #fff;
+  }
+}

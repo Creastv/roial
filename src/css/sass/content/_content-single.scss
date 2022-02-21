@@ -19,6 +19,7 @@ article {
         span {
           display: flex;
           align-items: center;
+          // flex-wrap: wrap;
         }
       }
       .breadcrumb_last {
@@ -30,6 +31,10 @@ article {
         height: 0px;
         border: 1px solid #d5d5d5;
         margin: 0 18px;
+        @media #{$xs} {
+          width: 15px;
+          margin: 0 15px;
+        }
       }
     }
     .entry-title {
@@ -38,6 +43,9 @@ article {
       font-size: 58px;
       font-weight: 400;
       color: $black;
+      @media #{$xs} {
+        font-size: 31px;
+      }
       span {
         font-weight: 700;
         color: $main !important;
@@ -47,5 +55,83 @@ article {
   .entry-content {
     position: relative;
     z-index: 3;
+  }
+}
+
+.single-post {
+  span.entry-title {
+    margin-bottom: 20px;
+    display: block;
+  }
+  h2.entry-title {
+    margin-bottom: 20px;
+    display: block;
+    font-weight: 700;
+  }
+  .entry-wraper {
+    max-width: 65%;
+    margin-left: 5%;
+    @media #{$lg} {
+      max-width: 100%;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  .entry-header {
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 50px;
+      margin: 20px 0;
+    }
+  }
+  .meta-data {
+    span {
+      display: block;
+      color: #707070;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .meta-category {
+    display: flex;
+    margin-bottom: 20px;
+    * {
+      font-size: 25px;
+      font-weight: 700;
+      color: $main;
+    }
+    span {
+      margin-right: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      li {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.triangles-single {
+  position: fixed;
+  z-index: -1;
+  top: 100px;
+  right: 0;
+  width: 18%;
+  @media #{$xs} {
+    width: 84%;
+  }
+  svg {
+    // width: 100%;
+    // @media #{$xs} {
+    //   width: 84%;
+    // }
   }
 }

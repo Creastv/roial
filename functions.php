@@ -83,6 +83,7 @@ function fix_svg() {
 add_action( 'admin_head', 'fix_svg' );
 
 
+
 // // Load more
 wp_localize_script( 'core-js', 'ajax_posts', array(
 	'ajaxurl' => admin_url( 'admin-ajax.php' ),
@@ -114,3 +115,51 @@ function more_post_ajax(){
 
 add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
 add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
+
+
+// Futured image
+add_image_size( 'crunchify-admin-post-featured-image', 120, 120, false );
+ 
+// Add the posts and pages columns filter. They can both use the same function.
+add_filter('manage_posts_columns', 'crunchify_add_post_admin_thumbnail_column', 2);
+add_filter('manage_pages_columns', 'crunchify_add_post_admin_thumbnail_column', 2);
+ 
+// Add the column
+function crunchify_add_post_admin_thumbnail_column($crunchify_columns){
+	$crunchify_columns['crunchify_thumb'] = __('Featured Image');
+	return $crunchify_columns;
+}
+ 
+// Let's manage Post and Page Admin Panel Columns
+add_action('manage_posts_custom_column', 'crunchify_show_post_thumbnail_column', 5, 2);
+add_action('manage_pages_custom_column', 'crunchify_show_post_thumbnail_column', 5, 2);
+ 
+// Here we are grabbing featured-thumbnail size post thumbnail and displaying it
+function crunchify_show_post_thumbnail_column($crunchify_columns, $crunchify_id){
+	switch($crunchify_columns){
+		case 'crunchify_thumb':
+		if( function_exists('the_post_thumbnail') )
+			echo the_post_thumbnail( 'crunchify-admin-post-featured-image' );
+		else
+			echo 'hmm... your theme doesn\'t support featured image...';
+		break;
+	}
+}
+
+// Paginacja
+
+function pagination_bars() {
+    global $wp_query;
+ 
+    $total_pages = $wp_query->max_num_pages;
+	$big = 999999999; // need an unlikely integer
+    if ($total_pages > 1){
+        $current_page = max(1, get_query_var('paged'));
+		echo paginate_links(array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => $current_page,
+            'total' => $total_pages,
+        ));
+    }
+}

@@ -24,12 +24,14 @@
         </div>
         <div class="col">
             <header class="entry-header">
-                <?php  echo wp_get_attachment_image( $logo, $size ); ?>
-                <?php if(empty($titleFild)){ ?>
-                <h2><?php echo $titleFild; ?></h2>
-                <?php } else { ?>
-                <h2><?php echo $title; ?></h2>
-                <?php } ?>
+                <a href="<?php echo esc_url( $permalink ); ?>">
+                    <?php  echo wp_get_attachment_image( $logo, $size ); ?>
+                    <?php if(empty($titleFild)){ ?>
+                    <h2><?php echo $titleFild; ?></h2>
+                    <?php } else { ?>
+                    <h2><?php echo $title; ?></h2>
+                    <?php } ?>
+                </a>
             </header>
             <div class="entry-desc">
                 <p><?php echo $desc; ?></p>

@@ -139,4 +139,12 @@
       distance.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
   };
+
+  const trianglesSingle = document.querySelector(".triangles-single");
+  document.addEventListener("scroll", () => {
+    let scrollTop = document.documentElement.scrollTop;
+    if (triangles !== null) {
+      trianglesSingle.style.top = 0 - scrollTop / 50 + "%";
+    }
+  });
 })();
