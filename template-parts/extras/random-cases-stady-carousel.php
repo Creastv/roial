@@ -1,6 +1,6 @@
 <?php
 $case = new WP_Query( array(
-    'post_type' => 'case-study',
+    'post_type' => 'cases',
     'posts_per_page' => 6,
     'orderby'   => 'rand',
     'order' => 'ASC'

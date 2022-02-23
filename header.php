@@ -19,5 +19,5 @@
             <?php get_template_part('template-parts/header/site-navbar'); ?>
         </div>
     </header>
-    <main>
+    <main id="main">
         <div class="container-fluid">

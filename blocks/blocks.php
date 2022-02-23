@@ -55,6 +55,21 @@ function register_acf_block_types() {
     ));
 
     acf_register_block_type(array(
+      'name'        => 'inb-button',
+      'title'       => __('Button'),
+      'category'    => 'formatting',
+      'icon' => array(
+          'background' => '#efd6ae',
+          'foreground' => '#fff',
+          'src' => 'ellipsis',
+        ),
+      'mode'            => 'preview', 
+      'render_template' => 'blocks/button/button.php',
+     'enqueue_assets'    => function(){
+          wp_enqueue_style( 'ra-tytul-sekcji',  get_template_directory_uri() . '/blocks/button/button.css' );
+      },
+    ));
+    acf_register_block_type(array(
         'name'              => 'blog',
         'title'             => __('Ostatnie posty'),
         'render_template'   => 'blocks/blog/blog.php',

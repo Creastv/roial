@@ -1,7 +1,7 @@
 .post-cart {
   @include trans;
   position: relative;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   .row {
     align-items: center;
     @media #{$md} {
@@ -70,12 +70,17 @@
       padding: 30px 20px;
     }
     h2 {
-      margin: 0;
-      padding: 0;
-      font-size: 40px;
-      margin-bottom: 50px;
-      @media #{$xlg} {
-        font-size: 31px;
+      a {
+        @include trans;
+        color: $black;
+        margin: 0;
+        padding: 0;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        @media #{$xlg} {
+          font-size: 31px;
+        }
       }
     }
   }
@@ -111,9 +116,14 @@
 }
 
 .post-cart:hover {
-  transform: translateX(-10px);
+  transform: translateY(-10px);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
   z-index: 5;
+  h2 {
+    a {
+      color: $main;
+    }
+  }
   .img {
     &:after {
       transform: translate(30%, 25%) rotate(180deg);

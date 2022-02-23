@@ -7,7 +7,7 @@ if( !empty($block['className']) ) {
 }
   $cases = new WP_Query( array(
         'post_type' => 'post',
-        'posts_per_page' => 6,
+        'posts_per_page' => 4,
         'order' => 'DESC',
     ));
 

@@ -1,5 +1,5 @@
 .ra-hero {
-  width: 100vw;
+  width: calc(100vw - 8px);
   margin-left: -50vw;
   left: 50%;
   position: relative;
@@ -12,13 +12,8 @@
   }
 }
 
-#ra-hero-carusel.loaded {
-  display: block !important;
-}
-
 #ra-hero-carusel {
   position: relative;
-  display: none;
 }
 
 #ra-hero-carusel .text {
@@ -145,6 +140,7 @@
   top: 80px;
   right: 0px;
   width: 51%;
+  overflow: hidden;
 }
 
 @media only screen and (max-width: 768px) {

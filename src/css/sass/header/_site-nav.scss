@@ -52,8 +52,8 @@
           font-size: 25px !important;
         }
         @media #{$lg} {
-          font-size: 18px !important;
-          padding: 15px 10px;
+          font-size: 16px !important;
+          padding: 15px 0px;
         }
         &::after {
           content: "";
@@ -95,6 +95,11 @@
       }
     }
     .menu-item-has-children {
+      a {
+        @media #{$lg} {
+          padding: 15px 15px 15px 0 !important;
+        }
+      }
       &:before,
       &:after {
         content: "";
@@ -104,6 +109,7 @@
         height: 1px;
         background: #797979;
         transition: all ease-in-out 0.2s;
+
         @media #{$md} {
           display: none;
         }
@@ -188,9 +194,10 @@
 
 // lang
 .lang-swicher {
-  padding: 20px;
+  // padding: 20px 0;
   @media #{$md} {
     order: 2;
+    padding: 20px;
   }
   ul {
     padding: 0;

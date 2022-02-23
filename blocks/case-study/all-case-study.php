@@ -9,8 +9,9 @@ if (get_locale() == 'pl_PL') { $label  = 'Wczytaj więcej'; } else { $label  = '
     }
     
     $cases = new WP_Query( array(
-        'post_type' => 'case-study',
+        'post_type' => 'cases',
         'posts_per_page' => 4,
+        'post__not_in' => array(3144),
         'order' => 'DESC',
     ));
 ?>

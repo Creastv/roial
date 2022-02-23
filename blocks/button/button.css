@@ -1,0 +1,12 @@
+.button-wraper {
+  margin-bottom: 20px;
+}
+
+.ra-button.aligncenter .button-wraper {
+  text-align: center;
+}
+
+.ra-button.alignright .button-wraper {
+  text-align: right;
+}
+/*# sourceMappingURL=button.css.map */

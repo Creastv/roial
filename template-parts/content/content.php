@@ -20,7 +20,7 @@
                     <div class="meta meta-data">
                         <span>Publikacja <?php echo $data;?></span>
                     </div>
-                    <h2><?php echo $title; ?></h2>
+                    <h2> <a href="<?php echo esc_url( $permalink ); ?>"><?php echo $title; ?> </a></h2>
                 </header>
                 <footer class="entry-footer">
                     <a class="btn btn-main-arrow " href="<?php echo esc_url( $permalink ); ?>">Zobacz wiecej</a>

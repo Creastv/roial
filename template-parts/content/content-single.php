@@ -12,23 +12,74 @@
         <?php } ?>
     </header>
     <div class="entry-wraper">
-        <header class="entry-header">
-            <h1 class="entry-title"><?php echo $title; ?></h1>
-            <?php the_post_thumbnail($size); ?>
-            <div class="meta meta-category">
-                <span> Kategoria: </span>
-                <?php the_category();?>
-            </div>
-            <div class="meta meta-data">
-                <span>Publikacja <?php echo $data;?></span>
-            </div>
+        <?php echo do_shortcode("[addtoany]"); ?>
+        <div class="wraper">
+            <header class="entry-header">
+                <h1 class="entry-title"><?php echo $title; ?></h1>
+                <div class="meta-group">
+                    <div class="meta meta-category">
+                        <span> Kategoria: </span>
+                        <?php the_category();?>
+                    </div>
+                    <div class="meta meta-data">
+                        <span>Publikacja <?php echo $data;?></span>
+                    </div>
+                </div>
+                <?php the_post_thumbnail($size); ?>
+            </header>
+            <div class="entry-content">
+                <?php the_content(); ?>
+                <div class="aggregateRating">
+                    <?php echo kk_star_ratings(); ?>
+                </div>
+                <div id="author-bio">
+                    <div id="author-avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?></div>
 
-        </header>
-        <div class="entry-content">
-            <?php the_content(); ?>
+                    <div id="author-details">
+                        <div class="author-head">
+                            <div class="title">
+                                <h2><?php the_author_posts_link(); ?></h2>
+                                <i><?php $author_id = get_the_author_meta('ID'); the_field('pozycja', 'user_'. $author_id); ?></i>
+                            </div>
+                            <div class="links">
+                                <?php  if (get_the_author_meta('user_url') ) { ?>
+                                <a href="<?php the_author_meta('user_url'); ?>" class="author-website" target="_blank">
+                                    <i class="fas fa-link"></i>
+                                </a>
+                                <?php } ?>
+                                <?php  if (get_the_author_meta('linkedin') ) { ?>
+                                <a href="<?php the_author_meta('linkedin'); ?>" class="author-linkedin" target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <?php } ?>
+                                <?php  if (get_the_author_meta('facebook') ) { ?>
+                                <a href="<?php the_author_meta('facebook'); ?>" class="author-facebook" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <?php } ?>
+                                <?php  if (get_the_author_meta('twitter') ) { ?>
+                                <a href="<?php the_author_meta('twitter'); ?>" class="author-twitter" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <?php }?>
+                                <?php  if (get_the_author_meta('instagram') ) { ?>
+                                <a href="<?php the_author_meta('instagram'); ?>" class="author-instagram"
+                                    target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                        <div class="author-footer">
+                            <p> <?php the_author_description(); ?></p>
+                        </div>
+                    </div><!-- #author-details -->
+                </div><!-- #author-bio -->
+            </div>
         </div>
     </div>
     <footer class="entry-footer"></footer>
+
     <div class="triangles-single">
         <svg xmlns="http://www.w3.org/2000/svg" width="1096.664" height="943.1" viewBox="0 0 1096.664 943.1">
             <g transform="translate(-898.834 -135.749)">
@@ -56,5 +107,4 @@
             </g>
         </svg>
     </div>
-
 </article>

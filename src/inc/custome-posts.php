@@ -21,23 +21,38 @@ function ra_casestudy_post_types() {
 	);
 	$args = array( 
 	    'public' => true,
-		'has_archive' => true,
+		'has_archive' => false,
 		'show_in_rest' => true,
 		'hierarchical'      => true,
-		'menu_icon'     => 'dashicons-businessman',
+		'menu_icon'     => get_template_directory_uri().'/src/img/admin-crown.png',
 		'labels'            => $labels,
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
 		'publicly_queryable' => true,
 		'show_in_rest' => true,
-		// "rewrite"             => array( "slug" => "inwestycje", "with_front" => true ),
+		"rewrite"             => array( "slug" => "cases", "with_front" => true ),
 		'supports'      => array( 'title', 'page-attributes', 'thumbnail', 'editor' ),
 	);
-    	register_post_type( 'case-study', $args );
+    	register_post_type( 'cases', $args );
 
 }
 add_action( 'init', 'ra_casestudy_post_types' );
+
+/**
+ * Add custom state Softwearhouse
+ */
+add_filter('display_post_states', 'case_study_custom_post_states');
+
+function case_study_custom_post_states($states) {
+    global $post;
+    $project_page_id = 3144;
+    if( 'cases' == get_post_type($post->ID) && $post->ID == $project_page_id && $project_page_id != '0') {
+        $states[] = __('Strona główna - Case study', 'ra');
+    }
+    return $states;
+}
+
 
 // //////////////////////////////////////////////////////////////Software house
 function ra_software_house_post_types() {
@@ -64,17 +79,142 @@ function ra_software_house_post_types() {
 		'has_archive' => false,
 		'show_in_rest' => true,
 		'hierarchical'      => true,
-		'menu_icon'     => 'dashicons-businessman',
+		'menu_icon'     => get_template_directory_uri().'/src/img/admin-crown.png',
 		'labels'            => $labels,
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
 		'publicly_queryable' => true,
 		'show_in_rest' => true,
-		// "rewrite"             => array( "slug" => "inwestycje", "with_front" => true ),
+		"rewrite"             => array( "slug" => 'software-house', "with_front" => false ),
 		'supports'      => array( 'title', 'page-attributes', 'thumbnail', 'editor' ),
 	);
     	register_post_type( 'software-house', $args );
 
 }
 add_action( 'init', 'ra_software_house_post_types' );
+
+/**
+ * Add custom state Softwearhouse
+ */
+add_filter('display_post_states', 'software_house_custom_post_states');
+
+function software_house_custom_post_states($states) {
+    global $post;
+    $project_page_id = 3115;
+    if( 'software-house' == get_post_type($post->ID) && $post->ID == $project_page_id && $project_page_id != '0') {
+        $states[] = __('Strona główna - Softwear house', 'ra');
+    }
+    return $states;
+}
+
+
+// //////////////////////////////////////////////////////////////Portfolio
+function ra_portfolio_post_types() {
+
+	$labels = array(
+		'name'               => 'Portfolio',
+		'singular_name'      => 'Portfolio',
+		'menu_name'          => 'Portfolio',
+		'name_admin_bar'     => 'Portfolio',
+		'add_new'            => 'Dodaj',
+		'add_new_item'       => 'Dodaj ',
+		'new_item'           => 'Nowy',
+		'edit_item'          => 'Edytuj ',
+		'view_item'          => 'Zobacz ',
+		'all_items'          => 'Portfolio',
+		'search_items'       => 'Szukaj',
+		'parent_item_colon'  => 'Parent :',
+		'not_found'          => 'Nie znaleziono',
+		'not_found_in_trash' => 'Nie znaleziono',
+		
+	);
+	$args = array( 
+	    'public' => true,
+		'has_archive' => false,
+		'show_in_rest' => true,
+		'hierarchical'      => true,
+		'menu_icon'     => get_template_directory_uri().'/src/img/admin-crown.png',
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'publicly_queryable' => true,
+		'show_in_rest' => true,
+		"rewrite"             => array( "slug" => 'realizacje', "with_front" => false ),
+		'supports'      => array( 'title', 'page-attributes', 'thumbnail', 'editor' ),
+	);
+    	register_post_type( 'realizacje', $args );
+
+}
+add_action( 'init', 'ra_portfolio_post_types' );
+
+/**
+ * Add custom state realizacje
+ */
+add_filter('display_post_states', 'portfolio_add_custom_post_states');
+
+function portfolio_add_custom_post_states($states) {
+    global $post;
+    $project_page_id = 3136;
+    if( 'realizacje' == get_post_type($post->ID) && $post->ID == $project_page_id && $project_page_id != '0') {
+        $states[] = __('Strona główna - Portfolio', 'ra');
+    }
+    return $states;
+}
+
+
+
+// //////////////////////////////////////////////////////////////Oferty
+function ra_oferty_post_types() {
+
+	$labels = array(
+		'name'               => 'Oferty',
+		'singular_name'      => 'Oferty',
+		'menu_name'          => 'Oferty',
+		'name_admin_bar'     => 'Oferty',
+		'add_new'            => 'Dodaj',
+		'add_new_item'       => 'Dodaj ',
+		'new_item'           => 'Nowy',
+		'edit_item'          => 'Edytuj ',
+		'view_item'          => 'Zobacz ',
+		'all_items'          => 'Oferty',
+		'search_items'       => 'Szukaj',
+		'parent_item_colon'  => 'Parent :',
+		'not_found'          => 'Nie znaleziono',
+		'not_found_in_trash' => 'Nie znaleziono',
+		
+	);
+	$args = array( 
+	    'public' => true,
+		'has_archive' => false,
+		'show_in_rest' => true,
+		'hierarchical'      => true,
+		'menu_icon'     => get_template_directory_uri().'/src/img/admin-crown.png',
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'publicly_queryable' => true,
+		'show_in_rest' => true,
+		"rewrite"             => array( "slug" => 'oferty', "with_front" => false ),
+		'supports'      => array( 'title', 'page-attributes', 'thumbnail', 'editor' ),
+	);
+    	register_post_type( 'oferty', $args );
+
+}
+add_action( 'init', 'ra_oferty_post_types' );
+
+/**
+ * Add custom state realizacje
+ */
+add_filter('display_post_states', 'oferty_add_custom_post_states');
+
+function oferty_add_custom_post_states($states) {
+    global $post;
+    $project_page_id = 3139;
+    if( 'oferty' == get_post_type($post->ID) && $post->ID == $project_page_id && $project_page_id != '0') {
+        $states[] = __('Strona główna - Oferta', 'ra');
+    }
+    return $states;
+}

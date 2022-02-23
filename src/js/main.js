@@ -1,3 +1,6 @@
+setTimeout(function () {
+  document.querySelector("#main").classList.add("loaded");
+}, 20);
 (window.onload = function (event) {
   const body = document.querySelector("body");
   const header = document.querySelector("#header");
@@ -143,7 +146,7 @@
   const trianglesSingle = document.querySelector(".triangles-single");
   document.addEventListener("scroll", () => {
     let scrollTop = document.documentElement.scrollTop;
-    if (triangles !== null) {
+    if (trianglesSingle !== null) {
       trianglesSingle.style.top = 0 - scrollTop / 50 + "%";
     }
   });

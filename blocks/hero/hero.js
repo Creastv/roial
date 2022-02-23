@@ -1,22 +1,21 @@
+// setTimeout(function () {
+//   document.querySelector(".ra-hero").classList.add("loaded");
+// }, 200);
 (window.onload = function (event) {
-  document.querySelector("#ra-hero-carusel").classList.add("loaded");
-
   const triangles = document.querySelector(".triangles svg");
   document.addEventListener("scroll", () => {
     let scrollTop = document.documentElement.scrollTop;
     if (triangles !== null) {
       triangles.style.width = 100 + scrollTop / 30 + "%";
-      triangles.style.left = -scrollTop / 20 + "%";
+      triangles.style.right = -scrollTop / 20 + "%";
       triangles.style.top = -80 - scrollTop / 2 + "%";
     }
   });
 
   var swiper = new Swiper("#ra-hero-carusel", {
-    grabCursor: true,
+    // grabCursor: true,
     effect: "creative",
-    preloadImages: false,
-    loop: true,
-    lazy: true,
+    // loop: true,
     autoplay: {
       delay: 2900,
       disableOnInteraction: false

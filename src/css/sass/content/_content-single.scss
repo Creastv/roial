@@ -1,57 +1,57 @@
-main {
-  overflow: hidden;
-}
-article {
-  .entry-header {
-    #breadcrumbs {
-      padding: 20px 0;
-      margin: 0;
-      font-size: 14px;
-      font-weight: 400;
-      a {
-        color: #d5d5d5;
-        @include trans;
-        &:hover {
-          color: $main-tir;
-        }
-      }
-      span {
-        span {
-          display: flex;
-          align-items: center;
-          // flex-wrap: wrap;
-        }
-      }
-      .breadcrumb_last {
+// main {
+//   overflow: hidden;
+// }
+.entry-header {
+  #breadcrumbs {
+    padding: 20px 0;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 400;
+    a {
+      color: #d5d5d5;
+      @include trans;
+      &:hover {
         color: $main-tir;
-        font-weight: 700;
-      }
-      .sep-b {
-        width: 37px;
-        height: 0px;
-        border: 1px solid #d5d5d5;
-        margin: 0 18px;
-        @media #{$xs} {
-          width: 15px;
-          margin: 0 15px;
-        }
       }
     }
-    .entry-title {
-      margin: 0;
-      padding: 20px 0;
-      font-size: 58px;
-      font-weight: 400;
-      color: $black;
-      @media #{$xs} {
-        font-size: 31px;
-      }
+    span {
       span {
-        font-weight: 700;
-        color: $main !important;
+        display: flex;
+        align-items: center;
+        // flex-wrap: wrap;
+      }
+    }
+    .breadcrumb_last {
+      color: $main-tir;
+      font-weight: 700;
+    }
+    .sep-b {
+      width: 37px;
+      height: 0px;
+      border: 1px solid #d5d5d5;
+      margin: 0 18px;
+      @media #{$xs} {
+        width: 15px;
+        margin: 0 15px;
       }
     }
   }
+}
+.entry-title {
+  margin: 0;
+  padding: 20px 0;
+  font-size: 58px;
+  font-weight: 400;
+  color: $black;
+  @media #{$xs} {
+    font-size: 31px;
+  }
+  span {
+    font-weight: 700;
+    color: $main !important;
+  }
+}
+article {
   .entry-content {
     position: relative;
     z-index: 3;
@@ -69,12 +69,19 @@ article {
     font-weight: 700;
   }
   .entry-wraper {
-    max-width: 65%;
-    margin-left: 5%;
+    display: flex;
+    max-width: 80%;
+    // margin-left: 5%;
+    @media #{$xlg} {
+      max-width: 90%;
+    }
     @media #{$lg} {
       max-width: 100%;
       width: 100%;
       margin-left: 0;
+    }
+    @media #{$sm} {
+      flex-wrap: wrap;
     }
   }
   .entry-header {
@@ -99,6 +106,9 @@ article {
   .meta-category {
     display: flex;
     margin-bottom: 20px;
+    @media #{$sm} {
+      flex-wrap: wrap;
+    }
     * {
       font-size: 25px;
       font-weight: 700;
@@ -112,10 +122,110 @@ article {
       padding: 0;
       margin: 0;
       display: flex;
+      @media #{$sm} {
+        flex-wrap: wrap;
+      }
       li {
         margin-right: 10px;
       }
     }
+  }
+}
+.meta-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media #{$md} {
+    flex-wrap: wrap;
+  }
+}
+// .entry-header {
+.addtoany_shortcode {
+  padding: 50px;
+  @media #{$xlg} {
+    padding: 30px 20px 0px 0;
+  }
+  @media #{$sm} {
+    order: 2;
+    width: 100%;
+  }
+  .a2a_kit {
+    padding: 0;
+    margin-left: 0px;
+    list-style: none;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    display: block;
+    @media #{$sm} {
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      width: 100%;
+    }
+    a {
+      display: block;
+      @media #{$sm} {
+        display: inline-block;
+      }
+    }
+  }
+}
+// }
+.aggregateRating {
+  padding: 50px 0px;
+  text-align: center;
+  .kk-star-ratings {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .kksr-stars {
+    width: 230px;
+    margin-bottom: 30px;
+  }
+  .kksr-legend {
+    width: 100%;
+  }
+}
+#author-bio {
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px;
+  margin: 20px 0px;
+  box-shadow: 0 0 40px 5px rgba(51, 51, 51, 0.1);
+  display: flex;
+  #author-avatar {
+    margin-right: 30px;
+    img {
+      width: 60px;
+    }
+  }
+  .author-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .links {
+      a {
+        margin: 3px;
+      }
+    }
+    h2 {
+      margin: 0;
+      font-size: 31px;
+      a {
+        font-size: 31px;
+      }
+    }
+  }
+  img {
+    border-radius: 100%;
+    margin-right: 15px;
+  }
+  p {
+    margin-top: 15px;
+    font-size: 16px;
   }
 }
 
@@ -125,8 +235,10 @@ article {
   top: 100px;
   right: 0;
   width: 18%;
-  @media #{$xs} {
+  overflow: hidden;
+  @media #{$sm} {
     width: 84%;
+    opacity: 0.5;
   }
   svg {
     // width: 100%;
