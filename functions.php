@@ -98,11 +98,11 @@ function pagination_bars() {
 }
 
 
-// load more
+
 wp_localize_script( 'core-js', 'ajax_posts', array(
 	'ajaxurl' => admin_url( 'admin-ajax.php' ),
 ));	
-
+// load more casestudy
 
 function more_post_ajax(){
     $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 3;
@@ -130,6 +130,35 @@ function more_post_ajax(){
 
 add_action('wp_ajax_nopriv_more_post_ajax', 'more_post_ajax');
 add_action('wp_ajax_more_post_ajax', 'more_post_ajax');
+
+
+
+function realizacje_post(){
+    $ppp = (isset($_POST["ppp"])) ? $_POST["ppp"] : 3;
+	$page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
+    $idd =  (isset($_POST["idd"])) ? $_POST["idd"] : 0;
+
+    header("Content-Type: text/html");
+    $args = array(
+    'post_type' => 'realizacje',
+    'posts_per_page' => $ppp,
+    'post__not_in' => array(3144),
+		'paged'    => $page,
+		'order' => 'ASC',
+		
+	);
+    $loop = new WP_Query($args);
+    $out = '';
+    if ($loop -> have_posts()) :  while ($loop -> have_posts()) : $loop -> the_post();
+		$out .=  include( 'template-parts/content/content-realizacje.php');
+
+    endwhile; endif;
+    wp_reset_postdata();
+    die($out);
+}
+
+add_action('wp_ajax_nopriv_realizacje_post', 'realizacje_post');
+add_action('wp_ajax_realizacje_post', 'realizacje_post');
 
 
 // Avatar image

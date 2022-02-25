@@ -3,6 +3,7 @@ $case = new WP_Query( array(
     'post_type' => 'cases',
     'posts_per_page' => 6,
     'orderby'   => 'rand',
+    'post__not_in' => array(3144, $post->ID ),
     'order' => 'ASC'
 ));
 ?>

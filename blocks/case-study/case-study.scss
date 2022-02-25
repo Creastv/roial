@@ -3,6 +3,9 @@
 
 .ra-case-study {
   padding: 50px 0;
+  @media #{$sm} {
+    padding: 0px;
+  }
   .ra-case-study-wraper {
     display: flex;
     flex-wrap: wrap;

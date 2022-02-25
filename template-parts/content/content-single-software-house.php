@@ -34,7 +34,9 @@
 
             </div>
         </div>
-        <footer class="entry-footer"></footer>
+        <?php if(edit_post_link()) { ?>
+        <footer class="entry-footer"><?php edit_post_link(__('Edit')); ?></footer>
+        <?php } ?>
     </div>
 </article>
 <?php if(has_post_thumbnail()) : ?>

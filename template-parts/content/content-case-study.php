@@ -37,6 +37,9 @@
                 <p><?php echo $desc; ?></p>
             </div>
             <footer class="entry-footer">
+                <?php if(edit_post_link()) { ?>
+                <?php edit_post_link(__('Edit')); ?>
+                <?php } ?>
                 <a class="btn btn-main-arrow " href="<?php echo esc_url( $permalink ); ?>">Zobacz wiecej</a>
             </footer>
         </div>

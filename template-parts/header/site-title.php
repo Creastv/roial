@@ -2,8 +2,14 @@
 <?php  yoast_breadcrumb( '<div id="breadcrumbs">','</div>' ); ?>
 <?php } ?>
 <?php if(!is_page_template('template-parts/no-title.php')  && !is_singular("post")  && !is_singular("software-house")) { ?>
-<?php if(is_singular("case-study")) { ?>
+<?php if(is_singular("cases") && !is_single(3144)) { ?>
 <h2 class="entry-title ">Case <span>studys</span></h2>
+<?php } ?>
+<?php if(is_singular("realizacje") && !is_single(3136)) { ?>
+<h2 class="entry-title ">Nasze <span>realizacje</span></h2>
+<?php } ?>
+<?php if(is_singular("oferty") && !is_single(3139)) { ?>
+<h2 class="entry-title ">Nasze <span>realizacje</span></h2>
 <?php } ?>
 <h1 class="entry-title">
     <?php

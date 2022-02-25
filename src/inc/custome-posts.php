@@ -33,6 +33,7 @@ function ra_casestudy_post_types() {
 		'show_in_rest' => true,
 		"rewrite"             => array( "slug" => "cases", "with_front" => true ),
 		'supports'      => array( 'title', 'page-attributes', 'thumbnail', 'editor' ),
+		// , 'editor' 
 	);
     	register_post_type( 'cases', $args );
 
@@ -48,10 +49,11 @@ function case_study_custom_post_states($states) {
     global $post;
     $project_page_id = 3144;
     if( 'cases' == get_post_type($post->ID) && $post->ID == $project_page_id && $project_page_id != '0') {
-        $states[] = __('Strona główna - Case study', 'ra');
+        $states[] = __('Strona główna - Case study (nie usuwać)', 'ra');
     }
     return $states;
 }
+
 
 
 // //////////////////////////////////////////////////////////////Software house
@@ -103,7 +105,7 @@ function software_house_custom_post_states($states) {
     global $post;
     $project_page_id = 3115;
     if( 'software-house' == get_post_type($post->ID) && $post->ID == $project_page_id && $project_page_id != '0') {
-        $states[] = __('Strona główna - Softwear house', 'ra');
+        $states[] = __('Strona główna - Softwear house (nie usuwać)', 'ra');
     }
     return $states;
 }
@@ -158,12 +160,20 @@ function portfolio_add_custom_post_states($states) {
     global $post;
     $project_page_id = 3136;
     if( 'realizacje' == get_post_type($post->ID) && $post->ID == $project_page_id && $project_page_id != '0') {
-        $states[] = __('Strona główna - Portfolio', 'ra');
+        $states[] = __('Strona główna - Portfolio (nie usuwać)', 'ra');
     }
     return $states;
 }
 
+// function disable_block_editor_portfolio( $use_block_editor, $post ) {
 
+//     $excluded_ids = array(3136);
+//     if ( !in_array( $post->ID, $excluded_ids ) ) {
+//         return false;
+//     }
+//     return $use_block_editor;
+// }
+// add_filter( 'use_block_editor_for_post', 'disable_block_editor_portfolio', 10, 2 );
 
 // //////////////////////////////////////////////////////////////Oferty
 function ra_oferty_post_types() {
@@ -214,7 +224,24 @@ function oferty_add_custom_post_states($states) {
     global $post;
     $project_page_id = 3139;
     if( 'oferty' == get_post_type($post->ID) && $post->ID == $project_page_id && $project_page_id != '0') {
-        $states[] = __('Strona główna - Oferta', 'ra');
+        $states[] = __('Strona główna - Oferta (nie usuwać)', 'ra');
     }
     return $states;
+}
+
+
+
+
+add_filter( 'use_block_editor_for_post', 'my_disable_gutenberg', 10, 2 );
+
+function my_disable_gutenberg( $can_edit, $post ) {
+  if( $post->post_type == 'cases'  && !get_page_template_slug( $post->ID ) == 'default-page.php' ) {
+    return false;
+   } elseif( $post->post_type == 'realizacje'  && !get_page_template_slug( $post->ID ) == 'default-page.php' ) {
+	  return false;
+   } elseif( $post->post_type == 'acf-field-group') {
+	  return false;
+  }
+
+  return true;
 }

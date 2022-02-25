@@ -120,6 +120,23 @@ function register_acf_block_types() {
     ));
 
     acf_register_block_type(array(
+        'name'              => 'realizacja-loader',
+        'title'             => __('Realizacje - load more'),
+        'render_template'   => 'blocks/realizacja/all-realizacja.php',
+        'category'          => 'formatting',
+        'icon' => array(
+          'background' => '#efd6ae',
+          'foreground' => '#fff',
+          'src' => 'ellipsis',
+        ),
+      'mode'            => 'preview', 
+      'keywords'          => array( 'Reqalizacje' ),
+      'enqueue_assets'    => function(){
+          wp_enqueue_style( 'ra-realizacja',  get_template_directory_uri() . '/blocks/realizacja/realizacja.css' );
+      },
+    ));
+
+    acf_register_block_type(array(
         'name'              => 'nasza-oferta',
         'title'             => __('Nasz oferta'),
         'render_template'   => 'blocks/nasza-oferta/nasza-oferta.php',
@@ -135,6 +152,24 @@ function register_acf_block_types() {
           wp_enqueue_style( 'ra-nasza-oferta',  get_template_directory_uri() . '/blocks/nasza-oferta/nasza-oferta.css' );
       },
     ));
+
+    acf_register_block_type(array(
+        'name'              => 'nasza-oferta-home',
+        'title'             => __('Nasz oferta - home'),
+        'render_template'   => 'blocks/nasza-oferta/nasza-oferta-home.php',
+        'category'          => 'formatting',
+        'icon' => array(
+          'background' => '#efd6ae',
+          'foreground' => '#fff',
+          'src' => 'ellipsis',
+        ),
+      'mode'            => 'preview', 
+      'keywords'          => array( 'Nasza oferta - home' ),
+      'enqueue_assets'    => function(){
+          wp_enqueue_style( 'ra-nasza-oferta',  get_template_directory_uri() . '/blocks/nasza-oferta/nasza-oferta.css' );
+      },
+    ));
+
     acf_register_block_type(array(
         'name'              => 'o-nas',
         'title'             => __('O nas - carusel'),

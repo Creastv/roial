@@ -1,6 +1,7 @@
 setTimeout(function () {
   document.querySelector("#main").classList.add("loaded");
 }, 20);
+
 (window.onload = function (event) {
   const body = document.querySelector("body");
   const header = document.querySelector("#header");

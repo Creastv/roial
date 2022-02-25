@@ -1,0 +1,51 @@
+@import "../../src/css/sass/variable";
+@import "../../src/css/sass/mixins";
+
+.ra-nasza-oferta {
+  .row {
+    flex-wrap: wrap;
+    justify-content: flex-end !important;
+    .col {
+      padding: 10px;
+      width: 50%;
+      @media #{$sm} {
+        width: 100% !important;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+.ra-nasza-oferta-home {
+  article {
+    background-color: rgba(255, 255, 255, 0.8);
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+  .row {
+    flex-wrap: wrap;
+
+    .col:nth-child(1) {
+      width: 25%;
+      @media #{$sm} {
+        width: 100%;
+      }
+    }
+    .col:nth-child(2) {
+      width: 75%;
+      @media #{$sm} {
+        width: 100%;
+      }
+    }
+    .row {
+      .col {
+        width: 50% !important;
+        @media #{$sm} {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

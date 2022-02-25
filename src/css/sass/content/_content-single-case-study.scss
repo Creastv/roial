@@ -1,0 +1,240 @@
+.cases-template-default {
+  // single
+  h2.entry-title {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  h1.entry-title {
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 31px;
+  }
+
+  .info-case {
+    padding: 30px 5% 30px;
+    @media #{$sm} {
+      padding: 0px;
+    }
+    .row {
+      flex-wrap: wrap;
+      align-items: stretch;
+      .col {
+        width: inherit;
+        margin-bottom: 30px;
+        @media #{$sm} {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+      .col:nth-child(1) {
+        width: inherit;
+        margin-right: 150px;
+        @media #{$sm} {
+          width: 100%;
+          margin-right: 0px;
+        }
+      }
+      .col:nth-child(2) {
+        width: inherit;
+        @media #{$sm} {
+          width: 100%;
+        }
+      }
+      .col:nth-child(3) {
+        margin-right: 50px;
+      }
+    }
+    .tools {
+      .title {
+        font-size: 20px;
+        color: $black;
+        margin-bottom: 30px;
+        display: block;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          display: flex;
+          margin-bottom: 10px;
+          align-items: center;
+          img {
+            margin-right: 10px;
+          }
+          p {
+            color: $black;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .logo {
+      height: 100%;
+      .img {
+        padding: 50px 70px;
+        border: 1px solid $black;
+        display: inline-block;
+        @media #{$sm} {
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+
+    .inf {
+      span {
+        font-size: 20px;
+        color: $black;
+      }
+      p {
+        font-size: 40px;
+        color: $black;
+      }
+    }
+
+    .gool {
+      position: relative;
+      z-index: 1;
+      padding-left: 3vw;
+      padding: 30px;
+      padding-left: 120px;
+      @media #{$sm} {
+        padding-left: 0;
+        margin-bottom: 20px;
+      }
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        width: 80px;
+        height: 80px;
+        clip-path: polygon(0 0, 0% 100%, 100% 49%);
+        @include trans;
+      }
+      &:before {
+        left: 0;
+        background-image: url(..//img/bg-gold-footer.jpg);
+        transform: translate(20px, -50%);
+        @media #{$sm} {
+          width: 60px;
+          height: 80px;
+          left: inherit;
+          right: 30px;
+          transform: translate(0, -50%) rotate(180deg);
+        }
+      }
+      &:after {
+        left: 0;
+        background-color: $main;
+        @media #{$sm} {
+          width: 60px;
+          height: 80px;
+          transform: translate(0, -50%) rotate(180deg);
+          left: inherit;
+          right: 0;
+        }
+      }
+      .number {
+        display: block;
+        font-size: 3vw;
+        font-weight: 900;
+        color: #6f6f6f;
+        @media #{$sm} {
+          font-size: 41px;
+        }
+        span {
+          font-size: 1.1vw;
+          @media #{$sm} {
+            font-size: 20px !important;
+          }
+        }
+      }
+      .desc {
+        display: block;
+        color: #6f6f6f;
+        font-size: 1vw;
+        padding-right: 10px;
+        @media #{$sm} {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .orn-s-cs {
+    position: absolute;
+    z-index: -1;
+    right: 0px;
+    bottom: 0px;
+    @media #{$sm} {
+      display: none;
+    }
+    img {
+      max-height: 80vh;
+    }
+  }
+  .entry-content {
+    width: calc(100vw - 8px);
+    margin-left: -50vw;
+    left: 50%;
+    position: relative;
+    background-color: $main;
+
+    .container-fluid {
+      padding: 30px 5% 30px;
+      margin-bottom: 50px;
+      @media #{$sm} {
+        padding: 15px;
+      }
+    }
+  }
+  .galeria {
+    margin-bottom: 100px;
+    padding-top: -50px;
+    position: relative;
+    z-index: 1;
+    @media #{$sm} {
+      margin-bottom: 40px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      width: calc(100vw - 8px);
+      margin-left: -50vw;
+      left: 50%;
+      top: -50px;
+      height: 200px;
+      background-color: $main;
+    }
+    ul {
+      list-style: none;
+      padding: 0px;
+      display: flex;
+      li {
+        width: 50%;
+        padding: 10px;
+        a {
+          display: block;
+          @include trans;
+          &:hover {
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+          }
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    padding: 20px;
+    width: 100%;
+    a {
+      padding: 20px;
+      background-color: $main-sec;
+    }
+  }
+}

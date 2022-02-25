@@ -2,6 +2,12 @@
   padding: 50px 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .ra-case-study {
+    padding: 0px;
+  }
+}
+
 .ra-case-study .ra-case-study-wraper {
   display: -webkit-box;
   display: -ms-flexbox;

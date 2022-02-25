@@ -47,13 +47,17 @@
         padding: 5px 20px;
         display: inline-block;
         @include trans;
-        @media #{$md} {
-          padding: 20px;
-          font-size: 25px !important;
+        @media #{$xlg} {
+          // font-size: 16px !important;
+          padding: 15px 0px;
         }
         @media #{$lg} {
           font-size: 16px !important;
           padding: 15px 0px;
+        }
+        @media #{$md} {
+          padding: 20px;
+          font-size: 25px !important;
         }
         &::after {
           content: "";
@@ -86,6 +90,7 @@
       a {
         color: $black !important;
         text-shadow: 0 0 0.65px #333, 0 0 0.65px #333;
+
         &::after {
           content: "";
           width: 100%;
@@ -96,8 +101,11 @@
     }
     .menu-item-has-children {
       a {
-        @media #{$lg} {
-          padding: 15px 15px 15px 0 !important;
+        @media #{$xlg} {
+          padding: 20px 20px 20px 0 !important;
+        }
+        @media #{$md} {
+          padding: 20px !important;
         }
       }
       &:before,
@@ -161,8 +169,8 @@
       li {
         width: 100%;
         a {
-          font-size: 14px;
-          padding: 8px 15px;
+          font-size: 14px !important;
+          padding: 8px 15px !important;
           display: block;
           // &:after {
           //   display: none;

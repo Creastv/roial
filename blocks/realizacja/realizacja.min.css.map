@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,mBAAmB,AAAC,CAClB,OAAO,CAAE,QAAQ,CAIlB,AAHC,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK,EAF1C,AAAA,mBAAmB,AAAC,CAGhB,OAAO,CAAE,CAAC,CAEb",
+    "sources": [
+        "realizacja.scss",
+        "../../src/css/sass/_variable.scss",
+        "../../src/css/sass/_mixins.scss"
+    ],
+    "names": [],
+    "file": "realizacja.min.css"
+}

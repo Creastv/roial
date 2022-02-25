@@ -1,0 +1,8 @@
+@import "../../src/css/sass/variable";
+@import "../../src/css/sass/mixins";
+.content-realizacja {
+  padding: 50px 0px;
+  @media #{$sm} {
+    padding: 0;
+  }
+}
