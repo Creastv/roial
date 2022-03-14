@@ -11,9 +11,6 @@
     endif;
 ?>
 <article id="post-<?php the_ID(); ?>" class="single-softwarehouse">
-    <header class="entry-header">
-        <?php get_template_part('template-parts/header/site-title'); ?>
-    </header>
     <div class="wraper-single-software-house">
         <?php get_template_part('template-parts/extras/nav-softwear-house'); ?>
         <div class="entry-content">
@@ -48,6 +45,7 @@ images[0] = '<img class="orn orn-01" src="<?php bloginfo('template_url'); ?>/src
 images[1] = '<img class="orn orn-02" src="<?php bloginfo('template_url'); ?>/src/img/orn-image-02.svg" />';
 images[2] = '<img class="orn orn-03" src="<?php bloginfo('template_url'); ?>/src/img/orn-image-03.svg" />';
 images[3] = '<img class="orn orn-04" src="<?php bloginfo('template_url'); ?>/src/img/orn-image-04.svg" />';
+
 index = Math.floor(Math.random() * images.length);
 ornPlace.innerHTML = images[index];
 </script>

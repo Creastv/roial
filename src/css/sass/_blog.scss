@@ -1,8 +1,14 @@
+.blog,
+.archive {
+  .entry-title {
+    text-align: center;
+  }
+}
 .wraper-full-posts {
-  width: calc(100vw - 8px);
-  margin-left: -50vw;
-  left: 50%;
-  position: relative;
+  // width: calc(100vw - 8px);
+  // margin-left: -50vw;
+  // left: 50%;
+  // position: relative;
 }
 
 .entry-header.blog {

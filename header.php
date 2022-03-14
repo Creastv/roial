@@ -14,10 +14,24 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <header id="header" class="js">
-        <div class="container-fluid">
-            <?php get_template_part('template-parts/header/site-navbar'); ?>
+    <header>
+        <div id="header" class="js">
+            <div class="container-fluid">
+                <?php get_template_part('template-parts/header/site-navbar'); ?>
+            </div>
         </div>
+
+        <?php if ( ! is_front_page()) : ?>
+        <div class="container-fluid">
+            <div class="entry-header">
+                <?php get_template_part('template-parts/header/site-title'); ?>
+            </div>
+        </div>
+        <?php endif; ?>
     </header>
     <main id="main">
-        <div class="container-fluid">
+        <?php if(is_page_template('narrow-page.php') ) { ?>
+        <div class="container">
+            <?php } else { ?>
+            <div class="container-fluid">
+                <?php }?>

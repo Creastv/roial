@@ -239,9 +239,10 @@ function my_disable_gutenberg( $can_edit, $post ) {
     return false;
    } elseif( $post->post_type == 'realizacje'  && !get_page_template_slug( $post->ID ) == 'default-page.php' ) {
 	  return false;
+   } elseif( $post->post_type == 'oferty'  && !get_page_template_slug( $post->ID ) == 'default-page.php' ) {
+	  return false;
    } elseif( $post->post_type == 'acf-field-group') {
 	  return false;
-  }
-
-  return true;
+   }
+   return true;
 }

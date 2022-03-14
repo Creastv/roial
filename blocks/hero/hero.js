@@ -1,14 +1,13 @@
-// setTimeout(function () {
-//   document.querySelector(".ra-hero").classList.add("loaded");
-// }, 200);
 (window.onload = function (event) {
   const triangles = document.querySelector(".triangles svg");
   document.addEventListener("scroll", () => {
     let scrollTop = document.documentElement.scrollTop;
     if (triangles !== null) {
-      triangles.style.width = 100 + scrollTop / 30 + "%";
-      triangles.style.right = -scrollTop / 20 + "%";
-      triangles.style.top = -80 - scrollTop / 2 + "%";
+      // triangles.style.right = -scrollTop / 20 + "%";
+      // triangles.style.top = -80 - scrollTop + "%";
+
+      triangles.style.transform = `translate(${scrollTop / 50}%, ${scrollTop / 5}px`;
+      triangles.style.webkittransform = `translate(${scrollTop / 50}%, ${scrollTop / 5}px`;
     }
   });
 

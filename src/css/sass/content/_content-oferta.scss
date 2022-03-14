@@ -1,5 +1,5 @@
 .content-oferta {
-  padding: 10px;
+  padding: 10px 10px 0 10px;
   border: 2px solid transparent;
   @include trans;
   @media #{$xs} {
@@ -54,9 +54,14 @@
     }
   }
   .inf {
+    position: relative;
     border-bottom: 1px solid $black;
-    margin-bottom: 30px;
+    padding-right: 50px;
+    @include trans;
     h2 {
+      margin: 0;
+      padding: 0;
+      margin-bottom: 20px;
       a {
         color: $black;
         font-weight: 700;
@@ -69,6 +74,13 @@
           font-size: 24px;
         }
       }
+    }
+    svg {
+      position: absolute;
+      bottom: 30px;
+      right: 20px;
+      transform: rotate(90deg) translate(0, 10px);
+      @include trans;
     }
   }
   .btn {
@@ -85,6 +97,13 @@
     h2 {
       a {
         color: $main;
+      }
+    }
+    .inf {
+      border-bottom: 1px solid transparent;
+      @include trans;
+      svg {
+        transform: rotate(90deg) translate(0px, 0);
       }
     }
   }

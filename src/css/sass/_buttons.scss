@@ -17,6 +17,7 @@
   background-color: $main;
 
   &:hover {
+    @include shadow;
     background-color: $black;
     color: #fff;
   }
@@ -40,8 +41,8 @@
     background: url(../img/long-arrow.svg);
     background-size: cover !important;
     background-repeat: no-repeat;
-    height: 22px;
-    width: 33px;
+    height: 15px;
+    width: 23px;
     position: absolute;
     right: 20px;
     top: 50%;

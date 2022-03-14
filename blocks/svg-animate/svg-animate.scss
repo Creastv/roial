@@ -1,0 +1,21 @@
+@import "../../src/css/sass/variable";
+@import "../../src/css/sass/mixins";
+
+.ra-svg-animate {
+  width: calc(100vw - 40px);
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+  .bg-animate {
+    position: absolute;
+    left: -20%;
+    z-index: -1;
+    top: 50%;
+    width: 50%;
+    transform: translate(0, -50%);
+    svg {
+      position: relative;
+      width: 100%;
+    }
+  }
+}

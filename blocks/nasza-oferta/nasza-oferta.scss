@@ -17,35 +17,67 @@
 }
 
 .ra-nasza-oferta-home {
+  width: calc(100vw - 8px);
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+  // padding: 50px 0;
+  .ra-title-section {
+    @media #{$md} {
+      text-align: center;
+    }
+  }
   article {
-    background-color: rgba(255, 255, 255, 0.8);
-
+    @media #{$sm} {
+      padding: 15px;
+    }
     &:hover {
       background-color: #fff;
     }
   }
   .row {
     flex-wrap: wrap;
+    align-items: flex-start;
 
     .col:nth-child(1) {
       width: 25%;
-      @media #{$sm} {
+      @media #{$md} {
         width: 100%;
       }
     }
     .col:nth-child(2) {
       width: 75%;
-      @media #{$sm} {
+      @media #{$md} {
         width: 100%;
       }
     }
     .row {
       .col {
         width: 50% !important;
+        // padding: 0 50px 0 0;
         @media #{$sm} {
           width: 100% !important;
         }
       }
+      .col:nth-child(odd) {
+        padding: 0 50px 0 0;
+        @media #{$xlg} {
+          padding: 0 10px 0 0;
+        }
+        @media #{$sm} {
+          padding: 0;
+        }
+      }
     }
+  }
+  .btn-wraper {
+    padding: 30px 10px;
+  }
+  .orn-nasza-oferta {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    width: 30%;
+    height: auto;
   }
 }

@@ -1,5 +1,5 @@
 #header {
-  background-color: #fff;
+  // background-color: #fff;
   position: relative;
   z-index: 999;
   transition: all 1s;
@@ -16,7 +16,16 @@
 }
 .header-sticky {
   // border-bottom: 1px solid darken($main, 5%) !important;
+  background-color: #fff;
   position: fixed !important;
   top: 0px;
   width: 100%;
+}
+
+.tri-header {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 25%;
 }

@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,eAAe,AAAC,CACd,KAAK,CAAE,kBAAkB,CACzB,WAAW,CAAE,KAAK,CAClB,IAAI,CAAE,GAAG,CACT,QAAQ,CAAE,QAAQ,CAanB,AAjBD,AAKE,eALa,CAKb,WAAW,AAAC,CACV,QAAQ,CAAE,QAAQ,CAClB,IAAI,CAAE,IAAI,CACV,OAAO,CAAE,EAAE,CACX,GAAG,CAAE,GAAG,CACR,KAAK,CAAE,GAAG,CACV,SAAS,CAAE,kBAAkB,CAK9B,AAhBH,AAYI,eAZW,CAKb,WAAW,CAOT,GAAG,AAAC,CACF,QAAQ,CAAE,QAAQ,CAClB,KAAK,CAAE,IAAI,CACZ",
+    "sources": [
+        "svg-animate.scss",
+        "../../src/css/sass/_variable.scss",
+        "../../src/css/sass/_mixins.scss"
+    ],
+    "names": [],
+    "file": "svg-animate.min.css"
+}

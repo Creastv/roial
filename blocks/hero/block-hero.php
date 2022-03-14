@@ -27,9 +27,8 @@ if( !empty($block['className']) ) {
         </div>
     </div>
     <div class="triangles">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px" y="0px" viewBox="0 0 985.2 1175.6" style="enable-background:new 0 0 985.2 1175.6;"
-            xml:space="preserve">
+        <svg class="bg-path" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+            y="0px" viewBox="0 0 985.2 1175.6" xml:space="preserve">
             <g transform="translate(-898.834 311.853)">
                 <path fill="none" stroke="#CFCFCF" d="M900.2-73l545.3,935.6" />
                 <path fill="none" stroke="#CFCFCF" d="M899.8,396.7L1035,633" />
@@ -47,6 +46,5 @@ if( !empty($block['className']) ) {
                 <path fill="none" stroke="#CFCFCF" d="M1306.8-309.6l387,666.4l190.3,327.7" />
             </g>
         </svg>
-
     </div>
 </section>

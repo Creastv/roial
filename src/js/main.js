@@ -1,6 +1,6 @@
 setTimeout(function () {
-  document.querySelector("#main").classList.add("loaded");
-}, 20);
+  document.querySelector("body").classList.add("loaded");
+}, 50);
 
 (window.onload = function (event) {
   const body = document.querySelector("body");
@@ -94,7 +94,7 @@ setTimeout(function () {
     stickier.classList.add("active");
   }, 2000);
 
-  // Modal
+  // // Modal
   stickier.addEventListener("click", openModal);
 
   modalClose.addEventListener("click", function (event) {
@@ -121,34 +121,51 @@ setTimeout(function () {
   }
 
   // viewport for sf
-  const triangles = document.querySelector(".orn-right svg");
-  var h1 = document.querySelector("footer");
+  // const triangles = document.querySelector(".orn-right svg");
+  // var h1 = document.querySelector("footer");
 
-  document.addEventListener("scroll", () => {
-    let scrollTop = document.documentElement.scrollTop;
-    if (isInViewport(h1)) {
-      if (triangles !== null) {
-        // triangles.style.width = 100 + scrollTop / 11 + "%";
-        triangles.style.transform = ` translate(0, ${0 + scrollTop / 2}px)`;
-      }
-    }
-  });
+  // document.addEventListener("scroll", () => {
+  //   let scrollTop = document.documentElement.scrollTop;
+  //   if (isInViewport(h1)) {
+  //     if (triangles !== null) {
+  //       // triangles.style.width = 100 + scrollTop / 11 + "%";
+  //       triangles.style.transform = ` translate(0, ${0 + scrollTop / 2}px)`;
+  //     }
+  //   }
+  // });
 
-  var isInViewport = (elem) => {
-    var distance = elem.getBoundingClientRect();
-    return (
-      distance.top >= 0 &&
-      distance.left >= 0 &&
-      distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      distance.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  };
+  // var isInViewport = (elem) => {
+  //   var distance = elem.getBoundingClientRect();
+  //   return (
+  //     distance.top >= 0 &&
+  //     distance.left >= 0 &&
+  //     distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+  //     distance.right <= (window.innerWidth || document.documentElement.clientWidth)
+  //   );
+  // };
 
-  const trianglesSingle = document.querySelector(".triangles-single");
-  document.addEventListener("scroll", () => {
-    let scrollTop = document.documentElement.scrollTop;
-    if (trianglesSingle !== null) {
-      trianglesSingle.style.top = 0 - scrollTop / 50 + "%";
-    }
-  });
+  // const trianglesSingle = document.querySelector(".triangles-single");
+  // document.addEventListener("scroll", () => {
+  //   let scrollTop = document.documentElement.scrollTop;
+  //   if (trianglesSingle !== null) {
+  //     trianglesSingle.style.top = 0 - scrollTop / 50 + "%";
+  //   }
+  // });
+
+  var pathEls = document.querySelectorAll(".bg-path path");
+  for (var i = 0; i < pathEls.length; i++) {
+    var pathEl = pathEls[i];
+    var offset = anime.setDashoffset(pathEl);
+    pathEl.setAttribute("stroke-dashoffset", offset);
+    anime({
+      targets: pathEl,
+      strokeDashoffset: [offset, 0],
+      duration: anime.random(2000, 3000),
+      delay: anime.random(0, 1000),
+      loop: true,
+      direction: "alternate",
+      easing: "easeInOutSine",
+      autoplay: true
+    });
+  }
 })();

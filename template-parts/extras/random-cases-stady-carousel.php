@@ -8,7 +8,7 @@ $case = new WP_Query( array(
 ));
 ?>
 <section id="ra-case-study-carousel">
-    <h3>Powiązane Case Studies</h3>
+    <h3> Case Studies</h3>
     <div class=" swiper carousel">
         <div class="nav-slider">
             <div class="swiper-pagination"></div>

@@ -14,13 +14,17 @@ body {
   font-weight: 400;
   position: relative;
   z-index: -1;
+  overflow: hidden;
+}
+body.loaded {
+  overflow: inherit;
 }
 main {
   opacity: 0;
   transition: opacity 0.2s, transform 0.5s;
   transform: translate(0, 10px);
 }
-main.loaded {
+body.loaded main {
   opacity: 1 !important;
   transform: translate(0, 0px);
 }

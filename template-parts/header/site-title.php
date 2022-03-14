@@ -1,7 +1,11 @@
 <?php if ( function_exists('yoast_breadcrumb') ) { ?>
 <?php  yoast_breadcrumb( '<div id="breadcrumbs">','</div>' ); ?>
 <?php } ?>
-<?php if(!is_page_template('template-parts/no-title.php')  && !is_singular("post")  && !is_singular("software-house")) { ?>
+<?php if(!is_page_template('template-parts/no-title.php')  && !is_singular("post")  ) { ?>
+
+<?php if(is_singular("software-house") && !is_single(3144)) { ?>
+<h2 class="entry-title ">Software <span>house</span></h2>
+<?php } ?>
 <?php if(is_singular("cases") && !is_single(3144)) { ?>
 <h2 class="entry-title ">Case <span>studys</span></h2>
 <?php } ?>
@@ -9,8 +13,9 @@
 <h2 class="entry-title ">Nasze <span>realizacje</span></h2>
 <?php } ?>
 <?php if(is_singular("oferty") && !is_single(3139)) { ?>
-<h2 class="entry-title ">Nasze <span>realizacje</span></h2>
+<h2 class="entry-title ">Nasza <span>oferta</span></h2>
 <?php } ?>
+<?php if(is_single(3139) || !is_singular("oferty") && !is_singular("software-house")) { ?>
 <h1 class="entry-title">
     <?php
 	$t = get_field("tytul",  $post->ID);
@@ -59,5 +64,5 @@
 			_e( 'Blog', 'cr' );
 		endif; ?>
 </h1>
-
+<?php } ?>
 <?php } ?>

@@ -155,7 +155,7 @@
 
 .cs-cart:hover > .cs-cart_wraper {
   transform: translateY(-10px);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.08);
+  @include shadow;
   .bg {
     &:after {
       left: -5%;

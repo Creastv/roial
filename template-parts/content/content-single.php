@@ -6,11 +6,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="single-post">
-    <header class="entry-header">
-        <?php if ( function_exists('yoast_breadcrumb') ) { ?>
-        <?php  yoast_breadcrumb( '<div id="breadcrumbs">','</div>' ); ?>
-        <?php } ?>
-    </header>
     <div class="entry-wraper">
         <?php echo do_shortcode("[addtoany]"); ?>
         <div class="wraper">
@@ -81,7 +76,8 @@
     <footer class="entry-footer"></footer>
 
     <div class="triangles-single">
-        <svg xmlns="http://www.w3.org/2000/svg" width="1096.664" height="943.1" viewBox="0 0 1096.664 943.1">
+        <svg class="bg-path" xmlns="http://www.w3.org/2000/svg" width="1096.664" height="943.1"
+            viewBox="0 0 1096.664 943.1">
             <g transform="translate(-898.834 -135.749)">
                 <path fill="none" stroke="#cfcfcf" d="M660.588,1150.758,796.17,1387.5"
                     transform="translate(238.83 -308.901)" />

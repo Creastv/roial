@@ -5,9 +5,6 @@ $opisProjektu = get_field("opis_projektu");
 $galeria = get_field("galeria");
 ?>
 <article id="post-<?php the_ID(); ?>" class="single-case-study">
-    <header class="entry-header">
-        <?php get_template_part('template-parts/header/site-title'); ?>
-    </header>
     <div class="info-realizacja">
         <div class="row">
             <div class="col">

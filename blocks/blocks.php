@@ -13,7 +13,7 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'keywords'          => array( 'hero' ),
       'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-hero',  get_template_directory_uri() . '/blocks/hero/hero.css' );
+          wp_enqueue_style( 'ra-hero',  get_template_directory_uri() . '/blocks/hero/hero.min.css' );
           wp_enqueue_style( 'ra_svipeer_css', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
           wp_enqueue_script('ra-swiper_js', 'https://unpkg.com/swiper/swiper-bundle.min.js',  array(), '20130456', true );
           wp_enqueue_script( 'ra-hero-script', get_template_directory_uri() . '/blocks/hero/hero.js', array(), '20130457', true );
@@ -33,10 +33,27 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'keywords'          => array( 'Zaufali nam' ),
       'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-zaufali-nam',  get_template_directory_uri() . '/blocks/zaufali-nam/zaufali-nam.css' );
-          wp_enqueue_script( 'ra-zaufali-nam-script', get_template_directory_uri() . '/blocks/zaufali-nam/zaufali-nam.js', array(), '20130458', true );
+          wp_enqueue_style( 'ra-zaufali-nam',  get_template_directory_uri() . '/blocks/zaufali-nam/zaufali-nam.min.css' );
       },
     ));
+
+    acf_register_block_type(array(
+        'name'              => 'svganimate',
+        'title'             => __('SVG - animate'),
+        'render_template'   => 'blocks/svg-animate/svg-animate.php',
+        'category'          => 'formatting',
+        'icon' => array(
+          'background' => '#efd6ae',
+          'foreground' => '#fff',
+          'src' => 'ellipsis',
+        ),
+      'mode'            => 'preview', 
+      'keywords'          => array( 'SVG', "Anmate" ),
+      'enqueue_assets'    => function(){
+          wp_enqueue_style( 'ra-svg-animate',  get_template_directory_uri() . '/blocks/svg-animate/svg-animate.min.css' );
+      },
+    ));
+
     acf_register_block_type(array(
         'name'              => 'tytul-sekcji',
         'title'             => __('Tytuł sekcji'),
@@ -50,7 +67,7 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'keywords'          => array( 'Tytuł' ),
       'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-tytul-sekcji',  get_template_directory_uri() . '/blocks/tytul-sekcji/tytul-sekcji.css' );
+          wp_enqueue_style( 'ra-tytul-sekcji',  get_template_directory_uri() . '/blocks/tytul-sekcji/tytul-sekcji.min.css' );
       },
     ));
 
@@ -66,7 +83,7 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'render_template' => 'blocks/button/button.php',
      'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-tytul-sekcji',  get_template_directory_uri() . '/blocks/button/button.css' );
+          wp_enqueue_style( 'ra-tytul-sekcji',  get_template_directory_uri() . '/blocks/button/button.min.css' );
       },
     ));
     acf_register_block_type(array(
@@ -82,7 +99,7 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'keywords'          => array( 'posty' ),
       'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-blog',  get_template_directory_uri() . '/blocks/blog/blog.css' );
+          wp_enqueue_style( 'ra-blog',  get_template_directory_uri() . '/blocks/blog/blog.min.css' );
       },
     ));
     acf_register_block_type(array(
@@ -98,7 +115,7 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'keywords'          => array( 'Case study' ),
       'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-case-study',  get_template_directory_uri() . '/blocks/case-study/case-study.css' );
+          wp_enqueue_style( 'ra-case-study',  get_template_directory_uri() . '/blocks/case-study/case-study.min.css' );
       },
     ));
 
@@ -115,7 +132,7 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'keywords'          => array( 'Case study' ),
       'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-case-study',  get_template_directory_uri() . '/blocks/case-study/case-study.css' );
+          wp_enqueue_style( 'ra-case-study',  get_template_directory_uri() . '/blocks/case-study/case-study.min.css' );
       },
     ));
 
@@ -132,7 +149,7 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'keywords'          => array( 'Reqalizacje' ),
       'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-realizacja',  get_template_directory_uri() . '/blocks/realizacja/realizacja.css' );
+          wp_enqueue_style( 'ra-realizacja',  get_template_directory_uri() . '/blocks/realizacja/realizacja.min.css' );
       },
     ));
 
@@ -149,7 +166,7 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'keywords'          => array( 'Nasza oferta' ),
       'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-nasza-oferta',  get_template_directory_uri() . '/blocks/nasza-oferta/nasza-oferta.css' );
+          wp_enqueue_style( 'ra-nasza-oferta',  get_template_directory_uri() . '/blocks/nasza-oferta/nasza-oferta.min.css' );
       },
     ));
 
@@ -166,7 +183,7 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'keywords'          => array( 'Nasza oferta - home' ),
       'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-nasza-oferta',  get_template_directory_uri() . '/blocks/nasza-oferta/nasza-oferta.css' );
+          wp_enqueue_style( 'ra-nasza-oferta',  get_template_directory_uri() . '/blocks/nasza-oferta/nasza-oferta.min.css' );
       },
     ));
 
@@ -183,7 +200,10 @@ function register_acf_block_types() {
       'mode'            => 'preview', 
       'keywords'          => array( 'O nas' ),
       'enqueue_assets'    => function(){
-          wp_enqueue_style( 'ra-o-nas',  get_template_directory_uri() . '/blocks/o-nas/o-nas.css' );
+         wp_enqueue_style( 'ra_svipeer_css', 'https://unpkg.com/swiper/swiper-bundle.min.css' );
+          wp_enqueue_style( 'ra-o-nas',  get_template_directory_uri() . '/blocks/o-nas/o-nas.min.css' );
+         
+          wp_enqueue_script('ra-swiper_js', 'https://unpkg.com/swiper/swiper-bundle.min.js',  array(), '20130456', true );
           wp_enqueue_script( 'ra-o-nas-script', get_template_directory_uri() . '/blocks/o-nas/o-nas.js', array(), '20130458', true );
       },
     ));

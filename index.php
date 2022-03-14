@@ -7,18 +7,10 @@
     $post = get_post($page_id);
     $content = apply_filters('the_content', $post->post_content);
     ?>
-    <header class="entry-header">
-        <?php get_template_part('template-parts/header/site-title'); ?>
-    </header>
-
     <?php echo $content; ?>
     <!-- END Archive case-study  -->
     <?php  else : ?>
     <!-- Archive Blog  -->
-
-    <header class="entry-header blog">
-        <?php get_template_part('template-parts/header/site-title'); ?>
-    </header>
     <?php get_template_part('template-parts/extras/nav-blog-category'); ?>
 
     <?php if ( have_posts() ) : ?>

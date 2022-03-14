@@ -17,9 +17,6 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" class="single-case-study">
-    <header class="entry-header">
-        <?php get_template_part('template-parts/header/site-title'); ?>
-    </header>
     <div class="info-case">
         <div class="row">
             <?php if( $logo) { ?>

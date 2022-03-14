@@ -12,6 +12,7 @@ a {
   color: $main;
   text-decoration: none;
   font-weight: 500;
+  @include trans;
 }
 p {
   margin-bottom: 30px;

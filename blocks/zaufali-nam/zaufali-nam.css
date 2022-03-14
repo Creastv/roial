@@ -3,7 +3,6 @@
   margin-left: -50vw;
   left: 50%;
   position: relative;
-  padding: 50px 0;
 }
 
 .ra-zaufalinam ul {
@@ -31,8 +30,23 @@
       align-self: stretch;
 }
 
+.ra-zaufalinam ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .ra-zaufalinam ul li .logo {
-  border: 1px solid #000;
+  border: 1px solid #ececec;
   background-color: #fff;
   height: 100%;
   display: -webkit-box;
@@ -45,6 +59,21 @@
       -ms-flex-align: center;
           align-items: center;
   max-height: 170px;
+  -webkit-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
+}
+
+.ra-zaufalinam ul li .logo:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  border: 1px solid #efd6ae;
+  -webkit-box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.08);
+          box-shadow: 0 0px 30px 0 rgba(0, 0, 0, 0.08);
+}
+
+.ra-zaufalinam ul li .logo:hover img {
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%);
 }
 
 .ra-zaufalinam ul li img {
@@ -54,6 +83,8 @@
   height: auto;
   -webkit-filter: brightness(0%);
           filter: brightness(0%);
+  -webkit-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
 }
 
 .bg-zaufali-nam {
@@ -65,6 +96,7 @@
 }
 
 .bg-zaufali-nam svg {
+  position: relative;
   width: 100%;
 }
 

@@ -2,4 +2,390 @@
 @import "../../src/css/sass/mixins";
 
 .ra-o-nas {
+  width: calc(100vw - 8px);
+  margin-left: -50vw;
+  left: 50%;
+  position: relative;
+  // padding: 50px 0;
+  .ra-title-section {
+    .title-section-tag {
+      font-size: 58px;
+      margin: 0;
+      padding: 0;
+      @media #{$xs} {
+        font-size: 31px;
+      }
+      span {
+        color: $main;
+        font-weight: 900;
+      }
+    }
+  }
+
+  .ra-title-section {
+    margin-bottom: 30px;
+  }
+  .row {
+    align-items: center;
+
+    @media #{$md} {
+      padding: 0px;
+      flex-wrap: wrap;
+    }
+    .col:nth-child(1) {
+      width: 35%;
+      padding-left: calc(7.5% + 15px);
+      @media #{$lg} {
+        width: 40%;
+      }
+      @media #{$md} {
+        width: 100%;
+        padding-right: calc(7.5% + 15px);
+      }
+      @media #{$sm} {
+        padding: 0 5%;
+      }
+    }
+    .col:nth-child(2) {
+      width: 65%;
+      position: relative;
+      padding-left: 50px;
+      @media #{$lg} {
+        width: 60%;
+      }
+      @media #{$md} {
+        padding-left: 0;
+        width: 100%;
+      }
+      // &:before {
+      //   content: "";
+      //   position: absolute;
+      //   background: rgb(255, 255, 255);
+      //   // background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      //   z-index: 3;
+      //   top: 0;
+      //   left: 50px;
+      //   width: 20px;
+      //   height: 100%;
+      //   pointer-events: none;
+      //   box-shadow: 0 0 20px 0 #00000010;
+      //   @media #{$md} {
+      //     display: none;
+      //   }
+      // }
+      // &:after {
+      //   content: "";
+      //   position: absolute;
+      //   background: rgb(255, 255, 255);
+      //   // background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      //   z-index: 3;
+      //   top: -5%;
+      //   left: 33px;
+      //   width: 40px;
+      //   height: 110%;
+      //   pointer-events: none;
+      //   // box-shadow: 0 0 10px 0 red;
+      //   @media #{$md} {
+      //     display: none;
+      //   }
+      // }
+    }
+  }
+  .row-full {
+    padding: 0 5% !important;
+    @media #{$md} {
+      padding: 0px;
+    }
+    .col {
+      width: 100% !important;
+      padding-left: 0 !important;
+      position: relative;
+    }
+    .arrows {
+      left: initial;
+      right: 6%;
+    }
+  }
+
+  .team {
+    padding: 50px;
+    @media #{$sm} {
+      padding: 50px 0;
+    }
+    .person {
+      min-height: 500px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      @media #{$sm} {
+        min-height: inherit;
+        padding: 20px;
+      }
+      .person-wraper {
+        @include trans;
+        img {
+          width: 300px;
+          height: 300px;
+          clip-path: polygon(50% 10%, 0% 100%, 100% 100%);
+          transition: all ease-in-out 1s;
+          @media #{$sm} {
+            width: 200px;
+            height: 200px;
+          }
+        }
+        .before,
+        .after {
+          position: absolute;
+          transition: all ease-in-out 1s;
+        }
+        .before {
+          width: 200px;
+          @media #{$sm} {
+            width: 100px;
+          }
+        }
+        .after {
+          width: 300px;
+          @media #{$sm} {
+            width: 200px;
+          }
+
+          z-index: -1;
+        }
+        .top {
+          position: absolute;
+          left: 0px;
+          top: 0;
+          width: 180px;
+          // transition: all ease-in-out 1s;
+          @media #{$sm} {
+            width: 120px;
+            left: -100px;
+          }
+        }
+        .bottom {
+          position: absolute;
+          z-index: -1;
+          bottom: 0;
+          width: 214px;
+          right: -40px;
+          transition: all ease-in-out 1s;
+          @media #{$sm} {
+            bottom: 93px;
+            width: 137px;
+            right: -50px;
+          }
+        }
+        .name-position {
+          margin-top: 15px;
+          .pos {
+            display: block;
+            color: darken($main, 10%);
+          }
+          h3 {
+            color: $black;
+            font-size: 31px;
+            padding: 0;
+            margin: 0;
+            a {
+              color: $black;
+              &:hover {
+                // color: darken($main, 30%);
+                color: $main-tir;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .swiper-slide:nth-child(odd) {
+      .person {
+        .person-wraper {
+          .top,
+          .bottom {
+            display: none;
+          }
+          .before {
+            top: 0;
+            left: 0;
+            transform: translate(50px, 80px);
+            @media #{$sm} {
+              transform: translate(20px, 50px);
+            }
+          }
+          .after {
+            bottom: 0;
+            right: 0;
+            transform: translate(0, -29px);
+          }
+        }
+      }
+    }
+
+    .swiper-slide:nth-child(even) {
+      .person {
+        .person-wraper {
+          align-self: flex-end;
+          .before {
+            bottom: 0;
+            left: 0;
+            transform: translate(55px, -150px);
+            @media #{$sm} {
+              transform: translate(0px, -150px);
+            }
+          }
+          .after {
+            bottom: 0;
+            right: 0;
+            transform: translate(23px, -13px) rotate(180deg);
+            @media #{$sm} {
+              transform: translate(-23px, -100px) rotate(180deg);
+            }
+            svg {
+              width: 350px;
+              height: 350px;
+              @media #{$sm} {
+                width: 200px;
+                height: 200px;
+              }
+
+              path {
+                opacity: 0.8;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-slide-active {
+    // @include trans;
+    .person-wraper {
+      animation: float2 10s linear infinite alternate;
+      img {
+        animation: float 25s linear infinite alternate;
+      }
+      .before {
+        animation: float 15s linear infinite alternate;
+      }
+      .top {
+        transform: translate(-50px, -100px);
+      }
+    }
+  }
+
+  .swiper-slide-active.swiper-slide:nth-child(even) {
+    .before {
+      bottom: inherit;
+      top: 0;
+    }
+  }
+  .person-wraper {
+    &:hover {
+      animation-play-state: paused;
+      img {
+        animation-play-state: paused;
+      }
+      .before,
+      .after {
+        animation-play-state: paused;
+        opacity: 0;
+      }
+    }
+  }
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    25% {
+      transform: translate(-10px, -20px);
+    }
+    50% {
+      transform: translate(10px, 20px);
+    }
+    75% {
+      transform: translate(-50px, -20px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+  @keyframes float2 {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translate(0px, -10px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+
+  .arrows {
+    width: auto;
+    position: absolute;
+    bottom: 10px;
+    z-index: 22;
+    left: 50px;
+    @media #{$md} {
+      bottom: inherit;
+      top: 50px;
+      right: 0;
+      left: inherit;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      background-color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 100%;
+      border: 1px solid $light-black;
+      @include trans;
+      left: 0;
+      bottom: 0;
+      @media #{$md} {
+        top: 0;
+        bottom: inherit;
+        left: inherit;
+        right: 70px;
+      }
+      &:after {
+        font-size: 14px;
+        color: $black;
+      }
+      &:hover {
+        font-size: 14px;
+        background-color: $black;
+        &:after {
+          color: #fff;
+        }
+      }
+    }
+    .swiper-button-next {
+      left: 50px;
+      z-index: 2;
+      @media #{$md} {
+        left: inherit;
+        right: 10px;
+      }
+    }
+  }
+  .swiper-slide {
+    width: 450px;
+    @media #{$sm} {
+      width: inherit;
+    }
+    //   background-color: red;
+  }
+
+  // .swiper-slide:nth-child(2n) {
+  //   width: 40%;
+  // }
+
+  // .swiper-slide:nth-child(3n) {
+  //   width: 20%;
+  // }
 }

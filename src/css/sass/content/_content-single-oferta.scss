@@ -9,4 +9,182 @@
     padding-top: 0;
     font-size: 31px;
   }
+  .single-oferta {
+    .entry-content {
+      width: calc(100vw - 10px);
+      margin-left: -50vw;
+      left: 50%;
+      position: relative;
+      padding-bottom: 50px;
+      overflow-y: hidden;
+      @media #{$sm} {
+        padding: 0px;
+      }
+      .container-fluid.inf {
+        padding: 30px 5% 30px;
+        @media #{$xlg} {
+          padding: 10px;
+        }
+        @media #{$xs} {
+          padding: 0px;
+        }
+      }
+      .row {
+        align-items: center;
+        @media #{$md} {
+          flex-wrap: wrap;
+        }
+      }
+      .col {
+        @media #{$md} {
+          width: 100%;
+        }
+      }
+      .col:nth-child(1) {
+        @media #{$md} {
+          order: 2;
+        }
+      }
+      .col:nth-child(2) {
+        @media #{$md} {
+          order: 1;
+        }
+      }
+      .inf-oferta {
+        h1 {
+          border-bottom: 1px solid $black;
+          margin-bottom: 30px;
+          padding-bottom: 30px;
+          font-size: 40px;
+        }
+        h3 {
+          color: $main;
+        }
+      }
+      .ico {
+        position: relative;
+        img {
+          width: 300px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          @media #{$md} {
+            width: 100px;
+            // position: relative;
+            top: 0;
+            left: initial;
+            transform: translate(0, 0);
+            right: 0;
+          }
+        }
+      }
+      .narzedzia-oferta {
+        span {
+          font-size: 20px;
+          color: $black;
+          margin-bottom: 15px;
+          display: block;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            color: $black;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            p {
+              margin: 0;
+            }
+            img {
+              margin-right: 15px;
+            }
+          }
+        }
+      }
+    }
+    .faq {
+      width: calc(100vw - 10px);
+      margin-left: -50vw;
+      left: 50%;
+      position: relative;
+      z-index: 3;
+      background-color: $main;
+      padding: 50px 0px;
+      padding: 50px 5% 50px;
+      margin-bottom: 50px;
+      @media #{$xlg} {
+        padding: 10px;
+      }
+      @media #{$sm} {
+        padding: 0px;
+      }
+
+      .row {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        @media #{$md} {
+          flex-wrap: wrap;
+        }
+        .col {
+          width: 50%;
+          padding: 10px;
+          @media #{$md} {
+            width: 100% !important;
+            padding: 10px 0;
+          }
+          @media #{$sm} {
+            width: 100%;
+          }
+        }
+      }
+      .wraper {
+        padding-right: 50px;
+        position: relative;
+        border-bottom: 1px solid $black;
+
+        .accordion {
+          padding: 15px 10px;
+          cursor: pointer;
+        }
+        .panel {
+          height: 0;
+          overflow: hidden;
+          // transition: all ease-in-out 0.1s;
+          opacity: 0;
+          padding: 0 20px;
+        }
+        svg {
+          position: absolute;
+          right: 20px;
+          bottom: 30px;
+          transform: rotate(180deg);
+        }
+      }
+      .wraper.active {
+        .panel {
+          height: 100%;
+          opacity: 1;
+        }
+        svg {
+          transform: rotate(0deg);
+        }
+      }
+    }
+  }
+}
+
+.orn-single-oferta {
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  right: 0px;
+  width: 50%;
+  svg {
+    height: 90%;
+    width: 115%;
+  }
 }

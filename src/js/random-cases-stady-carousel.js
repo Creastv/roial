@@ -1,6 +1,4 @@
 (window.onload = function (event) {
-  //   document.querySelector("#ra-case-study=-carousel").classList.add("loaded");
-
   var swiper = new Swiper(".carousel", {
     grabCursor: true,
     slidesPerView: 1,

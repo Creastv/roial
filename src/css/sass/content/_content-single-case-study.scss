@@ -13,36 +13,36 @@
 
   .info-case {
     padding: 30px 5% 30px;
-    @media #{$sm} {
+    @media #{$xlg} {
       padding: 0px;
     }
     .row {
       flex-wrap: wrap;
       align-items: stretch;
       .col {
-        width: inherit;
+        width: 50%;
         margin-bottom: 30px;
-        @media #{$sm} {
+        @media #{$md} {
           width: 100%;
           margin-bottom: 10px;
         }
       }
       .col:nth-child(1) {
-        width: inherit;
-        margin-right: 150px;
+        width: 50%;
+        // margin-right: 150px;
         @media #{$sm} {
           width: 100%;
           margin-right: 0px;
         }
       }
       .col:nth-child(2) {
-        width: inherit;
+        width: 50%;
         @media #{$sm} {
           width: 100%;
         }
       }
       .col:nth-child(3) {
-        margin-right: 50px;
+        padding-right: 15px;
       }
     }
     .tools {
@@ -232,9 +232,9 @@
   footer {
     padding: 20px;
     width: 100%;
-    a {
-      padding: 20px;
-      background-color: $main-sec;
-    }
+    // a {
+    //   padding: 20px;
+    //   background-color: $main-sec;
+    // }
   }
 }
